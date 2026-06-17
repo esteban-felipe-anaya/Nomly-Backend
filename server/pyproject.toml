@@ -1,0 +1,18 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+extend-exclude = "migrations"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "DJ"]
+# E501: line length handled by black.
+# DJ001: nullable CharFields (promo_code, scheduled_for) are intentional — the
+#        API contract returns explicit JSON null for them.
+ignore = ["E501", "DJ001"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/settings/*.py" = ["F401", "F403", "F405"]

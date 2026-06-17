@@ -1,0 +1,16 @@
+{
+  "name": "nomly-mock-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mock REST API for the Nomly food delivery app (json-server)",
+  "scripts": {
+    "seed": "node generate-db.js",
+    "start": "node server.js",
+    "mock": "node server.js",
+    "dev": "node generate-db.js && node server.js",
+    "verify-images": "node verify-images.js"
+  },
+  "dependencies": {
+    "json-server": "0.17.4"
+  }
+}

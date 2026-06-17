@@ -1,0 +1,7143 @@
+{
+  "users": [
+    {
+      "id": "usr_01",
+      "name": "Sofia Ramírez",
+      "email": "sofia@example.com",
+      "phone": "+52 55 1234 5678",
+      "avatar": "https://randomuser.me/api/portraits/women/44.jpg"
+    }
+  ],
+  "addresses": [
+    {
+      "id": "adr_01",
+      "userId": "usr_01",
+      "label": "Home",
+      "line1": "Av. Insurgentes Sur 1234",
+      "line2": "Apt 5B",
+      "city": "Mexico City",
+      "notes": "Ring the bell twice",
+      "lat": 19.37,
+      "lng": -99.176,
+      "isDefault": true
+    },
+    {
+      "id": "adr_02",
+      "userId": "usr_01",
+      "label": "Work",
+      "line1": "Paseo de la Reforma 222",
+      "line2": "Floor 12",
+      "city": "Mexico City",
+      "notes": "Leave at reception",
+      "lat": 19.427,
+      "lng": -99.1677,
+      "isDefault": false
+    },
+    {
+      "id": "adr_03",
+      "userId": "usr_01",
+      "label": "Mom's",
+      "line1": "Calle Madero 45",
+      "line2": "",
+      "city": "Mexico City",
+      "notes": "",
+      "lat": 19.4338,
+      "lng": -99.14,
+      "isDefault": false
+    }
+  ],
+  "cuisines": [
+    {
+      "id": "cui_pizza",
+      "name": "Pizza",
+      "icon": "local_pizza"
+    },
+    {
+      "id": "cui_burgers",
+      "name": "Burgers",
+      "icon": "lunch_dining"
+    },
+    {
+      "id": "cui_sushi",
+      "name": "Sushi",
+      "icon": "set_meal"
+    },
+    {
+      "id": "cui_mexican",
+      "name": "Mexican",
+      "icon": "restaurant"
+    },
+    {
+      "id": "cui_healthy",
+      "name": "Healthy",
+      "icon": "eco"
+    },
+    {
+      "id": "cui_ramen",
+      "name": "Ramen",
+      "icon": "ramen_dining"
+    },
+    {
+      "id": "cui_indian",
+      "name": "Indian",
+      "icon": "rice_bowl"
+    },
+    {
+      "id": "cui_dessert",
+      "name": "Desserts",
+      "icon": "icecream"
+    }
+  ],
+  "banners": [
+    {
+      "id": "ban_01",
+      "title": "20% off your first order",
+      "subtitle": "Use code NOMLY20",
+      "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=1000&q=75",
+      "restaurantId": "rst_01"
+    },
+    {
+      "id": "ban_02",
+      "title": "Free delivery all week",
+      "subtitle": "On orders over $20",
+      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1000&q=75",
+      "restaurantId": "rst_04"
+    },
+    {
+      "id": "ban_03",
+      "title": "Sushi night",
+      "subtitle": "Buy one roll get one free",
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1000&q=75",
+      "restaurantId": "rst_07"
+    },
+    {
+      "id": "ban_04",
+      "title": "Sweet treats",
+      "subtitle": "Desserts from $4",
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1000&q=75",
+      "restaurantId": "rst_19"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "rst_01",
+      "name": "Napoli Wood-Fired",
+      "cuisineId": "cui_pizza",
+      "cuisine": "Pizza",
+      "description": "Pizza favourites, prepared fresh to order at Napoli Wood-Fired.",
+      "cover": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=75",
+      "rating": 3.8,
+      "ratingCount": 120,
+      "deliveryMinutes": 15,
+      "deliveryFee": 0,
+      "priceLevel": 1,
+      "freeDelivery": true,
+      "offers": [
+        "20% off over $25"
+      ],
+      "distanceKm": 0.6,
+      "lat": 19.3926,
+      "lng": -99.1732,
+      "address": "100 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_02",
+      "name": "Slice & Co.",
+      "cuisineId": "cui_pizza",
+      "cuisine": "Pizza",
+      "description": "Pizza favourites, prepared fresh to order at Slice & Co..",
+      "cover": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.1,
+      "ratingCount": 157,
+      "deliveryMinutes": 20,
+      "deliveryFee": 2.49,
+      "priceLevel": 2,
+      "freeDelivery": false,
+      "offers": [
+        "Free dessert"
+      ],
+      "distanceKm": 1.1,
+      "lat": 19.3966,
+      "lng": -99.1692,
+      "address": "101 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_03",
+      "name": "Bella Forno",
+      "cuisineId": "cui_pizza",
+      "cuisine": "Pizza",
+      "description": "Pizza favourites, prepared fresh to order at Bella Forno.",
+      "cover": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.4,
+      "ratingCount": 194,
+      "deliveryMinutes": 25,
+      "deliveryFee": 3.49,
+      "priceLevel": 3,
+      "freeDelivery": false,
+      "offers": [],
+      "distanceKm": 1.5,
+      "lat": 19.4006,
+      "lng": -99.1652,
+      "address": "102 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_04",
+      "name": "Patty Palace",
+      "cuisineId": "cui_burgers",
+      "cuisine": "Burgers",
+      "description": "Burgers favourites, prepared fresh to order at Patty Palace.",
+      "cover": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.7,
+      "ratingCount": 231,
+      "deliveryMinutes": 30,
+      "deliveryFee": 1.49,
+      "priceLevel": 1,
+      "freeDelivery": false,
+      "offers": [
+        "20% off over $25"
+      ],
+      "distanceKm": 2,
+      "lat": 19.4046,
+      "lng": -99.1612,
+      "address": "103 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_05",
+      "name": "The Grind House",
+      "cuisineId": "cui_burgers",
+      "cuisine": "Burgers",
+      "description": "Burgers favourites, prepared fresh to order at The Grind House.",
+      "cover": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=200&q=75",
+      "rating": 3.8,
+      "ratingCount": 268,
+      "deliveryMinutes": 35,
+      "deliveryFee": 0,
+      "priceLevel": 2,
+      "freeDelivery": true,
+      "offers": [
+        "Free dessert"
+      ],
+      "distanceKm": 2.4,
+      "lat": 19.4086,
+      "lng": -99.1572,
+      "address": "104 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_06",
+      "name": "Smash & Sear",
+      "cuisineId": "cui_burgers",
+      "cuisine": "Burgers",
+      "description": "Burgers favourites, prepared fresh to order at Smash & Sear.",
+      "cover": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.1,
+      "ratingCount": 305,
+      "deliveryMinutes": 15,
+      "deliveryFee": 3.49,
+      "priceLevel": 3,
+      "freeDelivery": false,
+      "offers": [],
+      "distanceKm": 2.9,
+      "lat": 19.4126,
+      "lng": -99.1532,
+      "address": "105 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_07",
+      "name": "Sakura Sushi",
+      "cuisineId": "cui_sushi",
+      "cuisine": "Sushi",
+      "description": "Sushi favourites, prepared fresh to order at Sakura Sushi.",
+      "cover": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.4,
+      "ratingCount": 342,
+      "deliveryMinutes": 20,
+      "deliveryFee": 1.49,
+      "priceLevel": 1,
+      "freeDelivery": false,
+      "offers": [
+        "20% off over $25"
+      ],
+      "distanceKm": 3.3,
+      "lat": 19.4166,
+      "lng": -99.1492,
+      "address": "106 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_08",
+      "name": "Tokyo Roll Bar",
+      "cuisineId": "cui_sushi",
+      "cuisine": "Sushi",
+      "description": "Sushi favourites, prepared fresh to order at Tokyo Roll Bar.",
+      "cover": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.7,
+      "ratingCount": 379,
+      "deliveryMinutes": 25,
+      "deliveryFee": 2.49,
+      "priceLevel": 2,
+      "freeDelivery": false,
+      "offers": [
+        "Free dessert"
+      ],
+      "distanceKm": 0.6,
+      "lat": 19.4206,
+      "lng": -99.1452,
+      "address": "107 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_09",
+      "name": "Umami House",
+      "cuisineId": "cui_sushi",
+      "cuisine": "Sushi",
+      "description": "Sushi favourites, prepared fresh to order at Umami House.",
+      "cover": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=200&q=75",
+      "rating": 3.8,
+      "ratingCount": 416,
+      "deliveryMinutes": 30,
+      "deliveryFee": 0,
+      "priceLevel": 3,
+      "freeDelivery": true,
+      "offers": [],
+      "distanceKm": 1.1,
+      "lat": 19.4246,
+      "lng": -99.1412,
+      "address": "108 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_10",
+      "name": "El Camino Tacos",
+      "cuisineId": "cui_mexican",
+      "cuisine": "Mexican",
+      "description": "Mexican favourites, prepared fresh to order at El Camino Tacos.",
+      "cover": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.1,
+      "ratingCount": 453,
+      "deliveryMinutes": 35,
+      "deliveryFee": 1.49,
+      "priceLevel": 1,
+      "freeDelivery": false,
+      "offers": [
+        "20% off over $25"
+      ],
+      "distanceKm": 1.5,
+      "lat": 19.4286,
+      "lng": -99.1372,
+      "address": "109 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_11",
+      "name": "Casa Verde",
+      "cuisineId": "cui_mexican",
+      "cuisine": "Mexican",
+      "description": "Mexican favourites, prepared fresh to order at Casa Verde.",
+      "cover": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.4,
+      "ratingCount": 490,
+      "deliveryMinutes": 15,
+      "deliveryFee": 2.49,
+      "priceLevel": 2,
+      "freeDelivery": false,
+      "offers": [
+        "Free dessert"
+      ],
+      "distanceKm": 2,
+      "lat": 19.4326,
+      "lng": -99.1332,
+      "address": "110 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_12",
+      "name": "Maíz Cantina",
+      "cuisineId": "cui_mexican",
+      "cuisine": "Mexican",
+      "description": "Mexican favourites, prepared fresh to order at Maíz Cantina.",
+      "cover": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.7,
+      "ratingCount": 527,
+      "deliveryMinutes": 20,
+      "deliveryFee": 3.49,
+      "priceLevel": 3,
+      "freeDelivery": false,
+      "offers": [],
+      "distanceKm": 2.4,
+      "lat": 19.4366,
+      "lng": -99.1292,
+      "address": "111 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_13",
+      "name": "Green Fork",
+      "cuisineId": "cui_healthy",
+      "cuisine": "Healthy",
+      "description": "Healthy favourites, prepared fresh to order at Green Fork.",
+      "cover": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=200&q=75",
+      "rating": 3.8,
+      "ratingCount": 564,
+      "deliveryMinutes": 25,
+      "deliveryFee": 0,
+      "priceLevel": 1,
+      "freeDelivery": true,
+      "offers": [
+        "20% off over $25"
+      ],
+      "distanceKm": 2.9,
+      "lat": 19.4406,
+      "lng": -99.1252,
+      "address": "112 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_14",
+      "name": "Fresh Roots",
+      "cuisineId": "cui_healthy",
+      "cuisine": "Healthy",
+      "description": "Healthy favourites, prepared fresh to order at Fresh Roots.",
+      "cover": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.1,
+      "ratingCount": 601,
+      "deliveryMinutes": 30,
+      "deliveryFee": 2.49,
+      "priceLevel": 2,
+      "freeDelivery": false,
+      "offers": [
+        "Free dessert"
+      ],
+      "distanceKm": 3.3,
+      "lat": 19.4446,
+      "lng": -99.1212,
+      "address": "113 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_15",
+      "name": "Bowl & Co.",
+      "cuisineId": "cui_healthy",
+      "cuisine": "Healthy",
+      "description": "Healthy favourites, prepared fresh to order at Bowl & Co..",
+      "cover": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.4,
+      "ratingCount": 638,
+      "deliveryMinutes": 35,
+      "deliveryFee": 3.49,
+      "priceLevel": 3,
+      "freeDelivery": false,
+      "offers": [],
+      "distanceKm": 0.6,
+      "lat": 19.4486,
+      "lng": -99.1172,
+      "address": "114 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_16",
+      "name": "Ramen Republic",
+      "cuisineId": "cui_ramen",
+      "cuisine": "Ramen",
+      "description": "Ramen favourites, prepared fresh to order at Ramen Republic.",
+      "cover": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.7,
+      "ratingCount": 675,
+      "deliveryMinutes": 15,
+      "deliveryFee": 1.49,
+      "priceLevel": 1,
+      "freeDelivery": false,
+      "offers": [
+        "20% off over $25"
+      ],
+      "distanceKm": 1.1,
+      "lat": 19.4526,
+      "lng": -99.1132,
+      "address": "115 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_17",
+      "name": "Noodle Lab",
+      "cuisineId": "cui_ramen",
+      "cuisine": "Ramen",
+      "description": "Ramen favourites, prepared fresh to order at Noodle Lab.",
+      "cover": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=200&q=75",
+      "rating": 3.8,
+      "ratingCount": 712,
+      "deliveryMinutes": 20,
+      "deliveryFee": 0,
+      "priceLevel": 2,
+      "freeDelivery": true,
+      "offers": [
+        "Free dessert"
+      ],
+      "distanceKm": 1.5,
+      "lat": 19.4566,
+      "lng": -99.1092,
+      "address": "116 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_18",
+      "name": "Spice Route",
+      "cuisineId": "cui_indian",
+      "cuisine": "Indian",
+      "description": "Indian favourites, prepared fresh to order at Spice Route.",
+      "cover": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.1,
+      "ratingCount": 749,
+      "deliveryMinutes": 25,
+      "deliveryFee": 3.49,
+      "priceLevel": 3,
+      "freeDelivery": false,
+      "offers": [],
+      "distanceKm": 2,
+      "lat": 19.4606,
+      "lng": -99.1052,
+      "address": "117 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_19",
+      "name": "Tandoori Nights",
+      "cuisineId": "cui_indian",
+      "cuisine": "Indian",
+      "description": "Indian favourites, prepared fresh to order at Tandoori Nights.",
+      "cover": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.4,
+      "ratingCount": 786,
+      "deliveryMinutes": 30,
+      "deliveryFee": 1.49,
+      "priceLevel": 1,
+      "freeDelivery": false,
+      "offers": [
+        "20% off over $25"
+      ],
+      "distanceKm": 2.4,
+      "lat": 19.4646,
+      "lng": -99.1012,
+      "address": "118 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_20",
+      "name": "Sweet Tooth",
+      "cuisineId": "cui_dessert",
+      "cuisine": "Desserts",
+      "description": "Desserts favourites, prepared fresh to order at Sweet Tooth.",
+      "cover": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=200&q=75",
+      "rating": 4.7,
+      "ratingCount": 823,
+      "deliveryMinutes": 35,
+      "deliveryFee": 2.49,
+      "priceLevel": 2,
+      "freeDelivery": false,
+      "offers": [
+        "Free dessert"
+      ],
+      "distanceKm": 2.9,
+      "lat": 19.4686,
+      "lng": -99.0972,
+      "address": "119 Av. Reforma, Col. Centro"
+    },
+    {
+      "id": "rst_21",
+      "name": "Sugar & Spoon",
+      "cuisineId": "cui_dessert",
+      "cuisine": "Desserts",
+      "description": "Desserts favourites, prepared fresh to order at Sugar & Spoon.",
+      "cover": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1000&q=75",
+      "logo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=75",
+      "rating": 3.8,
+      "ratingCount": 860,
+      "deliveryMinutes": 15,
+      "deliveryFee": 0,
+      "priceLevel": 3,
+      "freeDelivery": true,
+      "offers": [],
+      "distanceKm": 3.3,
+      "lat": 19.4726,
+      "lng": -99.0932,
+      "address": "120 Av. Reforma, Col. Centro"
+    }
+  ],
+  "menus": {
+    "rst_01": [
+      {
+        "category": "Pizzas",
+        "dishIds": [
+          "dish_001",
+          "dish_002",
+          "dish_003",
+          "dish_004"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_005",
+          "dish_006"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_007",
+          "dish_008"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_009",
+          "dish_010"
+        ]
+      }
+    ],
+    "rst_02": [
+      {
+        "category": "Pizzas",
+        "dishIds": [
+          "dish_011",
+          "dish_012",
+          "dish_013",
+          "dish_014"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_015",
+          "dish_016"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_017",
+          "dish_018"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_019",
+          "dish_020"
+        ]
+      }
+    ],
+    "rst_03": [
+      {
+        "category": "Pizzas",
+        "dishIds": [
+          "dish_021",
+          "dish_022",
+          "dish_023",
+          "dish_024"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_025",
+          "dish_026"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_027",
+          "dish_028"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_029",
+          "dish_030"
+        ]
+      }
+    ],
+    "rst_04": [
+      {
+        "category": "Burgers",
+        "dishIds": [
+          "dish_031",
+          "dish_032",
+          "dish_033",
+          "dish_034"
+        ]
+      },
+      {
+        "category": "Sides",
+        "dishIds": [
+          "dish_035",
+          "dish_036"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_037"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_038",
+          "dish_039"
+        ]
+      }
+    ],
+    "rst_05": [
+      {
+        "category": "Burgers",
+        "dishIds": [
+          "dish_040",
+          "dish_041",
+          "dish_042",
+          "dish_043"
+        ]
+      },
+      {
+        "category": "Sides",
+        "dishIds": [
+          "dish_044",
+          "dish_045"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_046"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_047",
+          "dish_048"
+        ]
+      }
+    ],
+    "rst_06": [
+      {
+        "category": "Burgers",
+        "dishIds": [
+          "dish_049",
+          "dish_050",
+          "dish_051",
+          "dish_052"
+        ]
+      },
+      {
+        "category": "Sides",
+        "dishIds": [
+          "dish_053",
+          "dish_054"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_055"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_056",
+          "dish_057"
+        ]
+      }
+    ],
+    "rst_07": [
+      {
+        "category": "Sushi & Rolls",
+        "dishIds": [
+          "dish_058",
+          "dish_059",
+          "dish_060",
+          "dish_061"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_062",
+          "dish_063"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_064"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_065",
+          "dish_066"
+        ]
+      }
+    ],
+    "rst_08": [
+      {
+        "category": "Sushi & Rolls",
+        "dishIds": [
+          "dish_067",
+          "dish_068",
+          "dish_069",
+          "dish_070"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_071",
+          "dish_072"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_073"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_074",
+          "dish_075"
+        ]
+      }
+    ],
+    "rst_09": [
+      {
+        "category": "Sushi & Rolls",
+        "dishIds": [
+          "dish_076",
+          "dish_077",
+          "dish_078",
+          "dish_079"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_080",
+          "dish_081"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_082"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_083",
+          "dish_084"
+        ]
+      }
+    ],
+    "rst_10": [
+      {
+        "category": "Tacos",
+        "dishIds": [
+          "dish_085",
+          "dish_086",
+          "dish_087"
+        ]
+      },
+      {
+        "category": "Burritos & Bowls",
+        "dishIds": [
+          "dish_088",
+          "dish_089"
+        ]
+      },
+      {
+        "category": "Sides",
+        "dishIds": [
+          "dish_090",
+          "dish_091"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_092",
+          "dish_093"
+        ]
+      }
+    ],
+    "rst_11": [
+      {
+        "category": "Tacos",
+        "dishIds": [
+          "dish_094",
+          "dish_095",
+          "dish_096"
+        ]
+      },
+      {
+        "category": "Burritos & Bowls",
+        "dishIds": [
+          "dish_097",
+          "dish_098"
+        ]
+      },
+      {
+        "category": "Sides",
+        "dishIds": [
+          "dish_099",
+          "dish_100"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_101",
+          "dish_102"
+        ]
+      }
+    ],
+    "rst_12": [
+      {
+        "category": "Tacos",
+        "dishIds": [
+          "dish_103",
+          "dish_104",
+          "dish_105"
+        ]
+      },
+      {
+        "category": "Burritos & Bowls",
+        "dishIds": [
+          "dish_106",
+          "dish_107"
+        ]
+      },
+      {
+        "category": "Sides",
+        "dishIds": [
+          "dish_108",
+          "dish_109"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_110",
+          "dish_111"
+        ]
+      }
+    ],
+    "rst_13": [
+      {
+        "category": "Salads",
+        "dishIds": [
+          "dish_112",
+          "dish_113",
+          "dish_114"
+        ]
+      },
+      {
+        "category": "Bowls",
+        "dishIds": [
+          "dish_115",
+          "dish_116"
+        ]
+      },
+      {
+        "category": "Snacks",
+        "dishIds": [
+          "dish_117"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_118",
+          "dish_119"
+        ]
+      }
+    ],
+    "rst_14": [
+      {
+        "category": "Salads",
+        "dishIds": [
+          "dish_120",
+          "dish_121",
+          "dish_122"
+        ]
+      },
+      {
+        "category": "Bowls",
+        "dishIds": [
+          "dish_123",
+          "dish_124"
+        ]
+      },
+      {
+        "category": "Snacks",
+        "dishIds": [
+          "dish_125"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_126",
+          "dish_127"
+        ]
+      }
+    ],
+    "rst_15": [
+      {
+        "category": "Salads",
+        "dishIds": [
+          "dish_128",
+          "dish_129",
+          "dish_130"
+        ]
+      },
+      {
+        "category": "Bowls",
+        "dishIds": [
+          "dish_131",
+          "dish_132"
+        ]
+      },
+      {
+        "category": "Snacks",
+        "dishIds": [
+          "dish_133"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_134",
+          "dish_135"
+        ]
+      }
+    ],
+    "rst_16": [
+      {
+        "category": "Ramen",
+        "dishIds": [
+          "dish_136",
+          "dish_137",
+          "dish_138",
+          "dish_139"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_140",
+          "dish_141"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_142"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_143"
+        ]
+      }
+    ],
+    "rst_17": [
+      {
+        "category": "Ramen",
+        "dishIds": [
+          "dish_144",
+          "dish_145",
+          "dish_146",
+          "dish_147"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_148",
+          "dish_149"
+        ]
+      },
+      {
+        "category": "Desserts",
+        "dishIds": [
+          "dish_150"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_151"
+        ]
+      }
+    ],
+    "rst_18": [
+      {
+        "category": "Curries",
+        "dishIds": [
+          "dish_152",
+          "dish_153",
+          "dish_154",
+          "dish_155"
+        ]
+      },
+      {
+        "category": "Breads & Rice",
+        "dishIds": [
+          "dish_156",
+          "dish_157"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_158"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_159",
+          "dish_160"
+        ]
+      }
+    ],
+    "rst_19": [
+      {
+        "category": "Curries",
+        "dishIds": [
+          "dish_161",
+          "dish_162",
+          "dish_163",
+          "dish_164"
+        ]
+      },
+      {
+        "category": "Breads & Rice",
+        "dishIds": [
+          "dish_165",
+          "dish_166"
+        ]
+      },
+      {
+        "category": "Starters",
+        "dishIds": [
+          "dish_167"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_168",
+          "dish_169"
+        ]
+      }
+    ],
+    "rst_20": [
+      {
+        "category": "Cakes & Bakes",
+        "dishIds": [
+          "dish_170",
+          "dish_171",
+          "dish_172"
+        ]
+      },
+      {
+        "category": "Frozen",
+        "dishIds": [
+          "dish_173",
+          "dish_174"
+        ]
+      },
+      {
+        "category": "Pastries",
+        "dishIds": [
+          "dish_175",
+          "dish_176"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_177",
+          "dish_178"
+        ]
+      }
+    ],
+    "rst_21": [
+      {
+        "category": "Cakes & Bakes",
+        "dishIds": [
+          "dish_179",
+          "dish_180",
+          "dish_181"
+        ]
+      },
+      {
+        "category": "Frozen",
+        "dishIds": [
+          "dish_182",
+          "dish_183"
+        ]
+      },
+      {
+        "category": "Pastries",
+        "dishIds": [
+          "dish_184",
+          "dish_185"
+        ]
+      },
+      {
+        "category": "Drinks",
+        "dishIds": [
+          "dish_186",
+          "dish_187"
+        ]
+      }
+    ]
+  },
+  "dishes": [
+    {
+      "id": "dish_001",
+      "restaurantId": "rst_01",
+      "name": "Margherita",
+      "category": "Pizzas",
+      "description": "San Marzano tomato, fresh mozzarella, basil",
+      "price": 12.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_002",
+      "restaurantId": "rst_01",
+      "name": "Pepperoni",
+      "category": "Pizzas",
+      "description": "Double pepperoni, mozzarella, oregano",
+      "price": 14,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_003",
+      "restaurantId": "rst_01",
+      "name": "Quattro Formaggi",
+      "category": "Pizzas",
+      "description": "Mozzarella, gorgonzola, fontina, parmesan",
+      "price": 15.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_004",
+      "restaurantId": "rst_01",
+      "name": "Diavola",
+      "category": "Pizzas",
+      "description": "Spicy salami, chili, tomato, mozzarella",
+      "price": 14.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_005",
+      "restaurantId": "rst_01",
+      "name": "Garlic Bread",
+      "category": "Starters",
+      "description": "Wood-fired bread, garlic butter, parsley",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_006",
+      "restaurantId": "rst_01",
+      "name": "Bruschetta",
+      "category": "Starters",
+      "description": "Toasted sourdough, tomato, basil, olive oil",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_007",
+      "restaurantId": "rst_01",
+      "name": "Tiramisu",
+      "category": "Desserts",
+      "description": "Espresso-soaked ladyfingers, mascarpone",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_008",
+      "restaurantId": "rst_01",
+      "name": "Panna Cotta",
+      "category": "Desserts",
+      "description": "Vanilla cream, berry compote",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_009",
+      "restaurantId": "rst_01",
+      "name": "San Pellegrino",
+      "category": "Drinks",
+      "description": "Sparkling natural mineral water 500ml",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_010",
+      "restaurantId": "rst_01",
+      "name": "Italian Soda",
+      "category": "Drinks",
+      "description": "Lemon & blood orange",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_011",
+      "restaurantId": "rst_02",
+      "name": "Margherita",
+      "category": "Pizzas",
+      "description": "San Marzano tomato, fresh mozzarella, basil",
+      "price": 12.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_012",
+      "restaurantId": "rst_02",
+      "name": "Pepperoni",
+      "category": "Pizzas",
+      "description": "Double pepperoni, mozzarella, oregano",
+      "price": 14,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_013",
+      "restaurantId": "rst_02",
+      "name": "Quattro Formaggi",
+      "category": "Pizzas",
+      "description": "Mozzarella, gorgonzola, fontina, parmesan",
+      "price": 15.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_014",
+      "restaurantId": "rst_02",
+      "name": "Diavola",
+      "category": "Pizzas",
+      "description": "Spicy salami, chili, tomato, mozzarella",
+      "price": 14.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_015",
+      "restaurantId": "rst_02",
+      "name": "Garlic Bread",
+      "category": "Starters",
+      "description": "Wood-fired bread, garlic butter, parsley",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_016",
+      "restaurantId": "rst_02",
+      "name": "Bruschetta",
+      "category": "Starters",
+      "description": "Toasted sourdough, tomato, basil, olive oil",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_017",
+      "restaurantId": "rst_02",
+      "name": "Tiramisu",
+      "category": "Desserts",
+      "description": "Espresso-soaked ladyfingers, mascarpone",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_018",
+      "restaurantId": "rst_02",
+      "name": "Panna Cotta",
+      "category": "Desserts",
+      "description": "Vanilla cream, berry compote",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_019",
+      "restaurantId": "rst_02",
+      "name": "San Pellegrino",
+      "category": "Drinks",
+      "description": "Sparkling natural mineral water 500ml",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_020",
+      "restaurantId": "rst_02",
+      "name": "Italian Soda",
+      "category": "Drinks",
+      "description": "Lemon & blood orange",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_021",
+      "restaurantId": "rst_03",
+      "name": "Margherita",
+      "category": "Pizzas",
+      "description": "San Marzano tomato, fresh mozzarella, basil",
+      "price": 12.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_022",
+      "restaurantId": "rst_03",
+      "name": "Pepperoni",
+      "category": "Pizzas",
+      "description": "Double pepperoni, mozzarella, oregano",
+      "price": 14,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_023",
+      "restaurantId": "rst_03",
+      "name": "Quattro Formaggi",
+      "category": "Pizzas",
+      "description": "Mozzarella, gorgonzola, fontina, parmesan",
+      "price": 15.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_024",
+      "restaurantId": "rst_03",
+      "name": "Diavola",
+      "category": "Pizzas",
+      "description": "Spicy salami, chili, tomato, mozzarella",
+      "price": 14.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1571066811602-716837d681de?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Medium (11\")",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large (14\")",
+              "priceDelta": 4
+            },
+            {
+              "name": "Family (18\")",
+              "priceDelta": 7
+            }
+          ]
+        },
+        {
+          "group": "Extra toppings",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Mushrooms",
+              "priceDelta": 1.5
+            },
+            {
+              "name": "Extra cheese",
+              "priceDelta": 2
+            },
+            {
+              "name": "Pepperoni",
+              "priceDelta": 2
+            },
+            {
+              "name": "Olives",
+              "priceDelta": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_025",
+      "restaurantId": "rst_03",
+      "name": "Garlic Bread",
+      "category": "Starters",
+      "description": "Wood-fired bread, garlic butter, parsley",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_026",
+      "restaurantId": "rst_03",
+      "name": "Bruschetta",
+      "category": "Starters",
+      "description": "Toasted sourdough, tomato, basil, olive oil",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_027",
+      "restaurantId": "rst_03",
+      "name": "Tiramisu",
+      "category": "Desserts",
+      "description": "Espresso-soaked ladyfingers, mascarpone",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_028",
+      "restaurantId": "rst_03",
+      "name": "Panna Cotta",
+      "category": "Desserts",
+      "description": "Vanilla cream, berry compote",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_029",
+      "restaurantId": "rst_03",
+      "name": "San Pellegrino",
+      "category": "Drinks",
+      "description": "Sparkling natural mineral water 500ml",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_030",
+      "restaurantId": "rst_03",
+      "name": "Italian Soda",
+      "category": "Drinks",
+      "description": "Lemon & blood orange",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_031",
+      "restaurantId": "rst_04",
+      "name": "Classic Cheeseburger",
+      "category": "Burgers",
+      "description": "Beef patty, cheddar, lettuce, tomato, house sauce",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_032",
+      "restaurantId": "rst_04",
+      "name": "Bacon Double",
+      "category": "Burgers",
+      "description": "Two patties, smoked bacon, American cheese",
+      "price": 14.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_033",
+      "restaurantId": "rst_04",
+      "name": "Crispy Chicken",
+      "category": "Burgers",
+      "description": "Buttermilk-fried chicken, slaw, pickles",
+      "price": 12,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_034",
+      "restaurantId": "rst_04",
+      "name": "Veggie Burger",
+      "category": "Burgers",
+      "description": "Black bean patty, avocado, chipotle mayo",
+      "price": 11.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_035",
+      "restaurantId": "rst_04",
+      "name": "Skin-on Fries",
+      "category": "Sides",
+      "description": "Sea salt, rosemary",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_036",
+      "restaurantId": "rst_04",
+      "name": "Onion Rings",
+      "category": "Sides",
+      "description": "Beer-battered, ranch dip",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_037",
+      "restaurantId": "rst_04",
+      "name": "Chocolate Brownie",
+      "category": "Desserts",
+      "description": "Warm fudge brownie, vanilla ice cream",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_038",
+      "restaurantId": "rst_04",
+      "name": "Vanilla Milkshake",
+      "category": "Drinks",
+      "description": "Hand-spun, whipped cream",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_039",
+      "restaurantId": "rst_04",
+      "name": "Craft Cola",
+      "category": "Drinks",
+      "description": "House-made cola",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_040",
+      "restaurantId": "rst_05",
+      "name": "Classic Cheeseburger",
+      "category": "Burgers",
+      "description": "Beef patty, cheddar, lettuce, tomato, house sauce",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_041",
+      "restaurantId": "rst_05",
+      "name": "Bacon Double",
+      "category": "Burgers",
+      "description": "Two patties, smoked bacon, American cheese",
+      "price": 14.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_042",
+      "restaurantId": "rst_05",
+      "name": "Crispy Chicken",
+      "category": "Burgers",
+      "description": "Buttermilk-fried chicken, slaw, pickles",
+      "price": 12,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_043",
+      "restaurantId": "rst_05",
+      "name": "Veggie Burger",
+      "category": "Burgers",
+      "description": "Black bean patty, avocado, chipotle mayo",
+      "price": 11.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_044",
+      "restaurantId": "rst_05",
+      "name": "Skin-on Fries",
+      "category": "Sides",
+      "description": "Sea salt, rosemary",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_045",
+      "restaurantId": "rst_05",
+      "name": "Onion Rings",
+      "category": "Sides",
+      "description": "Beer-battered, ranch dip",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_046",
+      "restaurantId": "rst_05",
+      "name": "Chocolate Brownie",
+      "category": "Desserts",
+      "description": "Warm fudge brownie, vanilla ice cream",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_047",
+      "restaurantId": "rst_05",
+      "name": "Vanilla Milkshake",
+      "category": "Drinks",
+      "description": "Hand-spun, whipped cream",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_048",
+      "restaurantId": "rst_05",
+      "name": "Craft Cola",
+      "category": "Drinks",
+      "description": "House-made cola",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_049",
+      "restaurantId": "rst_06",
+      "name": "Classic Cheeseburger",
+      "category": "Burgers",
+      "description": "Beef patty, cheddar, lettuce, tomato, house sauce",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_050",
+      "restaurantId": "rst_06",
+      "name": "Bacon Double",
+      "category": "Burgers",
+      "description": "Two patties, smoked bacon, American cheese",
+      "price": 14.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_051",
+      "restaurantId": "rst_06",
+      "name": "Crispy Chicken",
+      "category": "Burgers",
+      "description": "Buttermilk-fried chicken, slaw, pickles",
+      "price": 12,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_052",
+      "restaurantId": "rst_06",
+      "name": "Veggie Burger",
+      "category": "Burgers",
+      "description": "Black bean patty, avocado, chipotle mayo",
+      "price": 11.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_053",
+      "restaurantId": "rst_06",
+      "name": "Skin-on Fries",
+      "category": "Sides",
+      "description": "Sea salt, rosemary",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_054",
+      "restaurantId": "rst_06",
+      "name": "Onion Rings",
+      "category": "Sides",
+      "description": "Beer-battered, ranch dip",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_055",
+      "restaurantId": "rst_06",
+      "name": "Chocolate Brownie",
+      "category": "Desserts",
+      "description": "Warm fudge brownie, vanilla ice cream",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_056",
+      "restaurantId": "rst_06",
+      "name": "Vanilla Milkshake",
+      "category": "Drinks",
+      "description": "Hand-spun, whipped cream",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_057",
+      "restaurantId": "rst_06",
+      "name": "Craft Cola",
+      "category": "Drinks",
+      "description": "House-made cola",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_058",
+      "restaurantId": "rst_07",
+      "name": "Salmon Nigiri (4pc)",
+      "category": "Sushi & Rolls",
+      "description": "Fresh salmon over seasoned rice",
+      "price": 9,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_059",
+      "restaurantId": "rst_07",
+      "name": "Spicy Tuna Roll",
+      "category": "Sushi & Rolls",
+      "description": "Tuna, spicy mayo, cucumber, sesame",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_060",
+      "restaurantId": "rst_07",
+      "name": "Dragon Roll",
+      "category": "Sushi & Rolls",
+      "description": "Eel, avocado, cucumber, tobiko",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_061",
+      "restaurantId": "rst_07",
+      "name": "California Roll",
+      "category": "Sushi & Rolls",
+      "description": "Crab, avocado, cucumber",
+      "price": 8.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1607301405390-d831c242f59b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_062",
+      "restaurantId": "rst_07",
+      "name": "Edamame",
+      "category": "Starters",
+      "description": "Steamed soybeans, sea salt",
+      "price": 4.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_063",
+      "restaurantId": "rst_07",
+      "name": "Miso Soup",
+      "category": "Starters",
+      "description": "Tofu, wakame, scallion",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_064",
+      "restaurantId": "rst_07",
+      "name": "Mochi Ice Cream",
+      "category": "Desserts",
+      "description": "Assorted (3pc)",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_065",
+      "restaurantId": "rst_07",
+      "name": "Green Tea",
+      "category": "Drinks",
+      "description": "Hot sencha",
+      "price": 2.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_066",
+      "restaurantId": "rst_07",
+      "name": "Ramune Soda",
+      "category": "Drinks",
+      "description": "Original marble soda",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_067",
+      "restaurantId": "rst_08",
+      "name": "Salmon Nigiri (4pc)",
+      "category": "Sushi & Rolls",
+      "description": "Fresh salmon over seasoned rice",
+      "price": 9,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_068",
+      "restaurantId": "rst_08",
+      "name": "Spicy Tuna Roll",
+      "category": "Sushi & Rolls",
+      "description": "Tuna, spicy mayo, cucumber, sesame",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_069",
+      "restaurantId": "rst_08",
+      "name": "Dragon Roll",
+      "category": "Sushi & Rolls",
+      "description": "Eel, avocado, cucumber, tobiko",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1607301405390-d831c242f59b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_070",
+      "restaurantId": "rst_08",
+      "name": "California Roll",
+      "category": "Sushi & Rolls",
+      "description": "Crab, avocado, cucumber",
+      "price": 8.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_071",
+      "restaurantId": "rst_08",
+      "name": "Edamame",
+      "category": "Starters",
+      "description": "Steamed soybeans, sea salt",
+      "price": 4.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_072",
+      "restaurantId": "rst_08",
+      "name": "Miso Soup",
+      "category": "Starters",
+      "description": "Tofu, wakame, scallion",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_073",
+      "restaurantId": "rst_08",
+      "name": "Mochi Ice Cream",
+      "category": "Desserts",
+      "description": "Assorted (3pc)",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_074",
+      "restaurantId": "rst_08",
+      "name": "Green Tea",
+      "category": "Drinks",
+      "description": "Hot sencha",
+      "price": 2.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_075",
+      "restaurantId": "rst_08",
+      "name": "Ramune Soda",
+      "category": "Drinks",
+      "description": "Original marble soda",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_076",
+      "restaurantId": "rst_09",
+      "name": "Salmon Nigiri (4pc)",
+      "category": "Sushi & Rolls",
+      "description": "Fresh salmon over seasoned rice",
+      "price": 9,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_077",
+      "restaurantId": "rst_09",
+      "name": "Spicy Tuna Roll",
+      "category": "Sushi & Rolls",
+      "description": "Tuna, spicy mayo, cucumber, sesame",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1607301405390-d831c242f59b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_078",
+      "restaurantId": "rst_09",
+      "name": "Dragon Roll",
+      "category": "Sushi & Rolls",
+      "description": "Eel, avocado, cucumber, tobiko",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_079",
+      "restaurantId": "rst_09",
+      "name": "California Roll",
+      "category": "Sushi & Rolls",
+      "description": "Crab, avocado, cucumber",
+      "price": 8.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_080",
+      "restaurantId": "rst_09",
+      "name": "Edamame",
+      "category": "Starters",
+      "description": "Steamed soybeans, sea salt",
+      "price": 4.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_081",
+      "restaurantId": "rst_09",
+      "name": "Miso Soup",
+      "category": "Starters",
+      "description": "Tofu, wakame, scallion",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1607301405390-d831c242f59b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_082",
+      "restaurantId": "rst_09",
+      "name": "Mochi Ice Cream",
+      "category": "Desserts",
+      "description": "Assorted (3pc)",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_083",
+      "restaurantId": "rst_09",
+      "name": "Green Tea",
+      "category": "Drinks",
+      "description": "Hot sencha",
+      "price": 2.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_084",
+      "restaurantId": "rst_09",
+      "name": "Ramune Soda",
+      "category": "Drinks",
+      "description": "Original marble soda",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1607301405390-d831c242f59b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_085",
+      "restaurantId": "rst_10",
+      "name": "Al Pastor Tacos (3)",
+      "category": "Tacos",
+      "description": "Marinated pork, pineapple, onion, cilantro",
+      "price": 10,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_086",
+      "restaurantId": "rst_10",
+      "name": "Carne Asada Tacos (3)",
+      "category": "Tacos",
+      "description": "Grilled steak, salsa verde, onion",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_087",
+      "restaurantId": "rst_10",
+      "name": "Baja Fish Tacos (3)",
+      "category": "Tacos",
+      "description": "Crispy fish, slaw, chipotle crema",
+      "price": 11.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_088",
+      "restaurantId": "rst_10",
+      "name": "Chicken Burrito",
+      "category": "Burritos & Bowls",
+      "description": "Rice, beans, cheese, pico, guac",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_089",
+      "restaurantId": "rst_10",
+      "name": "Veggie Bowl",
+      "category": "Burritos & Bowls",
+      "description": "Cilantro rice, beans, fajita veg, salsa",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_090",
+      "restaurantId": "rst_10",
+      "name": "Chips & Guacamole",
+      "category": "Sides",
+      "description": "Fresh guac, lime, tortilla chips",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_091",
+      "restaurantId": "rst_10",
+      "name": "Elote",
+      "category": "Sides",
+      "description": "Grilled corn, cotija, chili, lime",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_092",
+      "restaurantId": "rst_10",
+      "name": "Horchata",
+      "category": "Drinks",
+      "description": "Cinnamon rice milk",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_093",
+      "restaurantId": "rst_10",
+      "name": "Jarritos",
+      "category": "Drinks",
+      "description": "Tamarind / lime",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_094",
+      "restaurantId": "rst_11",
+      "name": "Al Pastor Tacos (3)",
+      "category": "Tacos",
+      "description": "Marinated pork, pineapple, onion, cilantro",
+      "price": 10,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_095",
+      "restaurantId": "rst_11",
+      "name": "Carne Asada Tacos (3)",
+      "category": "Tacos",
+      "description": "Grilled steak, salsa verde, onion",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_096",
+      "restaurantId": "rst_11",
+      "name": "Baja Fish Tacos (3)",
+      "category": "Tacos",
+      "description": "Crispy fish, slaw, chipotle crema",
+      "price": 11.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_097",
+      "restaurantId": "rst_11",
+      "name": "Chicken Burrito",
+      "category": "Burritos & Bowls",
+      "description": "Rice, beans, cheese, pico, guac",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_098",
+      "restaurantId": "rst_11",
+      "name": "Veggie Bowl",
+      "category": "Burritos & Bowls",
+      "description": "Cilantro rice, beans, fajita veg, salsa",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_099",
+      "restaurantId": "rst_11",
+      "name": "Chips & Guacamole",
+      "category": "Sides",
+      "description": "Fresh guac, lime, tortilla chips",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_100",
+      "restaurantId": "rst_11",
+      "name": "Elote",
+      "category": "Sides",
+      "description": "Grilled corn, cotija, chili, lime",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_101",
+      "restaurantId": "rst_11",
+      "name": "Horchata",
+      "category": "Drinks",
+      "description": "Cinnamon rice milk",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_102",
+      "restaurantId": "rst_11",
+      "name": "Jarritos",
+      "category": "Drinks",
+      "description": "Tamarind / lime",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_103",
+      "restaurantId": "rst_12",
+      "name": "Al Pastor Tacos (3)",
+      "category": "Tacos",
+      "description": "Marinated pork, pineapple, onion, cilantro",
+      "price": 10,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_104",
+      "restaurantId": "rst_12",
+      "name": "Carne Asada Tacos (3)",
+      "category": "Tacos",
+      "description": "Grilled steak, salsa verde, onion",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_105",
+      "restaurantId": "rst_12",
+      "name": "Baja Fish Tacos (3)",
+      "category": "Tacos",
+      "description": "Crispy fish, slaw, chipotle crema",
+      "price": 11.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_106",
+      "restaurantId": "rst_12",
+      "name": "Chicken Burrito",
+      "category": "Burritos & Bowls",
+      "description": "Rice, beans, cheese, pico, guac",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_107",
+      "restaurantId": "rst_12",
+      "name": "Veggie Bowl",
+      "category": "Burritos & Bowls",
+      "description": "Cilantro rice, beans, fajita veg, salsa",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_108",
+      "restaurantId": "rst_12",
+      "name": "Chips & Guacamole",
+      "category": "Sides",
+      "description": "Fresh guac, lime, tortilla chips",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_109",
+      "restaurantId": "rst_12",
+      "name": "Elote",
+      "category": "Sides",
+      "description": "Grilled corn, cotija, chili, lime",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_110",
+      "restaurantId": "rst_12",
+      "name": "Horchata",
+      "category": "Drinks",
+      "description": "Cinnamon rice milk",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_111",
+      "restaurantId": "rst_12",
+      "name": "Jarritos",
+      "category": "Drinks",
+      "description": "Tamarind / lime",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_112",
+      "restaurantId": "rst_13",
+      "name": "Caesar Salad",
+      "category": "Salads",
+      "description": "Romaine, parmesan, croutons, classic dressing",
+      "price": 9.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_113",
+      "restaurantId": "rst_13",
+      "name": "Greek Bowl",
+      "category": "Salads",
+      "description": "Quinoa, feta, olives, cucumber, tomato",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_114",
+      "restaurantId": "rst_13",
+      "name": "Poke Bowl",
+      "category": "Salads",
+      "description": "Ahi tuna, edamame, mango, brown rice",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_115",
+      "restaurantId": "rst_13",
+      "name": "Buddha Bowl",
+      "category": "Bowls",
+      "description": "Roasted veg, chickpeas, tahini, greens",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_116",
+      "restaurantId": "rst_13",
+      "name": "Acai Bowl",
+      "category": "Bowls",
+      "description": "Acai, banana, granola, berries",
+      "price": 9,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_117",
+      "restaurantId": "rst_13",
+      "name": "Avocado Toast",
+      "category": "Snacks",
+      "description": "Sourdough, smashed avo, chili flakes",
+      "price": 7.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_118",
+      "restaurantId": "rst_13",
+      "name": "Green Smoothie",
+      "category": "Drinks",
+      "description": "Spinach, apple, banana, ginger",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_119",
+      "restaurantId": "rst_13",
+      "name": "Cold Brew",
+      "category": "Drinks",
+      "description": "Slow-steeped, 18h",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_120",
+      "restaurantId": "rst_14",
+      "name": "Caesar Salad",
+      "category": "Salads",
+      "description": "Romaine, parmesan, croutons, classic dressing",
+      "price": 9.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_121",
+      "restaurantId": "rst_14",
+      "name": "Greek Bowl",
+      "category": "Salads",
+      "description": "Quinoa, feta, olives, cucumber, tomato",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_122",
+      "restaurantId": "rst_14",
+      "name": "Poke Bowl",
+      "category": "Salads",
+      "description": "Ahi tuna, edamame, mango, brown rice",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_123",
+      "restaurantId": "rst_14",
+      "name": "Buddha Bowl",
+      "category": "Bowls",
+      "description": "Roasted veg, chickpeas, tahini, greens",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_124",
+      "restaurantId": "rst_14",
+      "name": "Acai Bowl",
+      "category": "Bowls",
+      "description": "Acai, banana, granola, berries",
+      "price": 9,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_125",
+      "restaurantId": "rst_14",
+      "name": "Avocado Toast",
+      "category": "Snacks",
+      "description": "Sourdough, smashed avo, chili flakes",
+      "price": 7.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_126",
+      "restaurantId": "rst_14",
+      "name": "Green Smoothie",
+      "category": "Drinks",
+      "description": "Spinach, apple, banana, ginger",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_127",
+      "restaurantId": "rst_14",
+      "name": "Cold Brew",
+      "category": "Drinks",
+      "description": "Slow-steeped, 18h",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_128",
+      "restaurantId": "rst_15",
+      "name": "Caesar Salad",
+      "category": "Salads",
+      "description": "Romaine, parmesan, croutons, classic dressing",
+      "price": 9.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_129",
+      "restaurantId": "rst_15",
+      "name": "Greek Bowl",
+      "category": "Salads",
+      "description": "Quinoa, feta, olives, cucumber, tomato",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_130",
+      "restaurantId": "rst_15",
+      "name": "Poke Bowl",
+      "category": "Salads",
+      "description": "Ahi tuna, edamame, mango, brown rice",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_131",
+      "restaurantId": "rst_15",
+      "name": "Buddha Bowl",
+      "category": "Bowls",
+      "description": "Roasted veg, chickpeas, tahini, greens",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_132",
+      "restaurantId": "rst_15",
+      "name": "Acai Bowl",
+      "category": "Bowls",
+      "description": "Acai, banana, granola, berries",
+      "price": 9,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_133",
+      "restaurantId": "rst_15",
+      "name": "Avocado Toast",
+      "category": "Snacks",
+      "description": "Sourdough, smashed avo, chili flakes",
+      "price": 7.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_134",
+      "restaurantId": "rst_15",
+      "name": "Green Smoothie",
+      "category": "Drinks",
+      "description": "Spinach, apple, banana, ginger",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_135",
+      "restaurantId": "rst_15",
+      "name": "Cold Brew",
+      "category": "Drinks",
+      "description": "Slow-steeped, 18h",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551248429-40975aa4de74?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_136",
+      "restaurantId": "rst_16",
+      "name": "Tonkotsu Ramen",
+      "category": "Ramen",
+      "description": "Pork bone broth, chashu, egg, scallion",
+      "price": 13.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_137",
+      "restaurantId": "rst_16",
+      "name": "Shoyu Ramen",
+      "category": "Ramen",
+      "description": "Soy-based broth, bamboo, nori, egg",
+      "price": 12.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_138",
+      "restaurantId": "rst_16",
+      "name": "Spicy Miso Ramen",
+      "category": "Ramen",
+      "description": "Miso broth, chili oil, corn, butter",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_139",
+      "restaurantId": "rst_16",
+      "name": "Veggie Ramen",
+      "category": "Ramen",
+      "description": "Mushroom dashi, tofu, greens",
+      "price": 12,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_140",
+      "restaurantId": "rst_16",
+      "name": "Gyoza (5pc)",
+      "category": "Starters",
+      "description": "Pan-fried pork dumplings",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_141",
+      "restaurantId": "rst_16",
+      "name": "Karaage",
+      "category": "Starters",
+      "description": "Japanese fried chicken, lemon",
+      "price": 7,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_142",
+      "restaurantId": "rst_16",
+      "name": "Matcha Cheesecake",
+      "category": "Desserts",
+      "description": "Baked matcha, white chocolate",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_143",
+      "restaurantId": "rst_16",
+      "name": "Iced Matcha Latte",
+      "category": "Drinks",
+      "description": "Ceremonial matcha, oat milk",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_144",
+      "restaurantId": "rst_17",
+      "name": "Tonkotsu Ramen",
+      "category": "Ramen",
+      "description": "Pork bone broth, chashu, egg, scallion",
+      "price": 13.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_145",
+      "restaurantId": "rst_17",
+      "name": "Shoyu Ramen",
+      "category": "Ramen",
+      "description": "Soy-based broth, bamboo, nori, egg",
+      "price": 12.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_146",
+      "restaurantId": "rst_17",
+      "name": "Spicy Miso Ramen",
+      "category": "Ramen",
+      "description": "Miso broth, chili oil, corn, butter",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_147",
+      "restaurantId": "rst_17",
+      "name": "Veggie Ramen",
+      "category": "Ramen",
+      "description": "Mushroom dashi, tofu, greens",
+      "price": 12,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Add-ons",
+          "type": "multi",
+          "required": false,
+          "options": [
+            {
+              "name": "Extra sauce",
+              "priceDelta": 0.75
+            },
+            {
+              "name": "Side salad",
+              "priceDelta": 3
+            },
+            {
+              "name": "Avocado",
+              "priceDelta": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_148",
+      "restaurantId": "rst_17",
+      "name": "Gyoza (5pc)",
+      "category": "Starters",
+      "description": "Pan-fried pork dumplings",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_149",
+      "restaurantId": "rst_17",
+      "name": "Karaage",
+      "category": "Starters",
+      "description": "Japanese fried chicken, lemon",
+      "price": 7,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_150",
+      "restaurantId": "rst_17",
+      "name": "Matcha Cheesecake",
+      "category": "Desserts",
+      "description": "Baked matcha, white chocolate",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_151",
+      "restaurantId": "rst_17",
+      "name": "Iced Matcha Latte",
+      "category": "Drinks",
+      "description": "Ceremonial matcha, oat milk",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_152",
+      "restaurantId": "rst_18",
+      "name": "Butter Chicken",
+      "category": "Curries",
+      "description": "Tomato-cream sauce, tandoori chicken",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_153",
+      "restaurantId": "rst_18",
+      "name": "Paneer Tikka Masala",
+      "category": "Curries",
+      "description": "Grilled paneer, spiced tomato gravy",
+      "price": 12,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_154",
+      "restaurantId": "rst_18",
+      "name": "Lamb Rogan Josh",
+      "category": "Curries",
+      "description": "Slow-cooked lamb, Kashmiri spices",
+      "price": 14.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_155",
+      "restaurantId": "rst_18",
+      "name": "Chana Masala",
+      "category": "Curries",
+      "description": "Chickpeas, onion-tomato masala",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_156",
+      "restaurantId": "rst_18",
+      "name": "Garlic Naan",
+      "category": "Breads & Rice",
+      "description": "Tandoor-baked, garlic butter",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_157",
+      "restaurantId": "rst_18",
+      "name": "Biryani",
+      "category": "Breads & Rice",
+      "description": "Basmati, saffron, fried onion",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_158",
+      "restaurantId": "rst_18",
+      "name": "Samosas (2)",
+      "category": "Starters",
+      "description": "Spiced potato & pea, tamarind chutney",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_159",
+      "restaurantId": "rst_18",
+      "name": "Mango Lassi",
+      "category": "Drinks",
+      "description": "Yogurt, mango, cardamom",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_160",
+      "restaurantId": "rst_18",
+      "name": "Masala Chai",
+      "category": "Drinks",
+      "description": "Spiced milk tea",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_161",
+      "restaurantId": "rst_19",
+      "name": "Butter Chicken",
+      "category": "Curries",
+      "description": "Tomato-cream sauce, tandoori chicken",
+      "price": 13,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_162",
+      "restaurantId": "rst_19",
+      "name": "Paneer Tikka Masala",
+      "category": "Curries",
+      "description": "Grilled paneer, spiced tomato gravy",
+      "price": 12,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_163",
+      "restaurantId": "rst_19",
+      "name": "Lamb Rogan Josh",
+      "category": "Curries",
+      "description": "Slow-cooked lamb, Kashmiri spices",
+      "price": 14.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_164",
+      "restaurantId": "rst_19",
+      "name": "Chana Masala",
+      "category": "Curries",
+      "description": "Chickpeas, onion-tomato masala",
+      "price": 10.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Spice level",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Mild",
+              "priceDelta": 0
+            },
+            {
+              "name": "Medium",
+              "priceDelta": 0
+            },
+            {
+              "name": "Hot",
+              "priceDelta": 0
+            }
+          ]
+        },
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_165",
+      "restaurantId": "rst_19",
+      "name": "Garlic Naan",
+      "category": "Breads & Rice",
+      "description": "Tandoor-baked, garlic butter",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_166",
+      "restaurantId": "rst_19",
+      "name": "Biryani",
+      "category": "Breads & Rice",
+      "description": "Basmati, saffron, fried onion",
+      "price": 11,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_167",
+      "restaurantId": "rst_19",
+      "name": "Samosas (2)",
+      "category": "Starters",
+      "description": "Spiced potato & pea, tamarind chutney",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_168",
+      "restaurantId": "rst_19",
+      "name": "Mango Lassi",
+      "category": "Drinks",
+      "description": "Yogurt, mango, cardamom",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_169",
+      "restaurantId": "rst_19",
+      "name": "Masala Chai",
+      "category": "Drinks",
+      "description": "Spiced milk tea",
+      "price": 3,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_170",
+      "restaurantId": "rst_20",
+      "name": "Chocolate Lava Cake",
+      "category": "Cakes & Bakes",
+      "description": "Molten center, cocoa dusting",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_171",
+      "restaurantId": "rst_20",
+      "name": "New York Cheesecake",
+      "category": "Cakes & Bakes",
+      "description": "Graham crust, berry coulis",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_172",
+      "restaurantId": "rst_20",
+      "name": "Carrot Cake",
+      "category": "Cakes & Bakes",
+      "description": "Cream cheese frosting, walnuts",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_173",
+      "restaurantId": "rst_20",
+      "name": "Gelato Trio",
+      "category": "Frozen",
+      "description": "Pistachio, stracciatella, lemon",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_174",
+      "restaurantId": "rst_20",
+      "name": "Affogato",
+      "category": "Frozen",
+      "description": "Vanilla gelato, espresso shot",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_175",
+      "restaurantId": "rst_20",
+      "name": "Belgian Waffle",
+      "category": "Pastries",
+      "description": "Maple, berries, cream",
+      "price": 7,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_176",
+      "restaurantId": "rst_20",
+      "name": "Cinnamon Roll",
+      "category": "Pastries",
+      "description": "Warm, vanilla glaze",
+      "price": 4.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_177",
+      "restaurantId": "rst_20",
+      "name": "Cappuccino",
+      "category": "Drinks",
+      "description": "Double shot, velvet foam",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_178",
+      "restaurantId": "rst_20",
+      "name": "Hot Chocolate",
+      "category": "Drinks",
+      "description": "Dark Belgian chocolate",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_179",
+      "restaurantId": "rst_21",
+      "name": "Chocolate Lava Cake",
+      "category": "Cakes & Bakes",
+      "description": "Molten center, cocoa dusting",
+      "price": 6.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_180",
+      "restaurantId": "rst_21",
+      "name": "New York Cheesecake",
+      "category": "Cakes & Bakes",
+      "description": "Graham crust, berry coulis",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_181",
+      "restaurantId": "rst_21",
+      "name": "Carrot Cake",
+      "category": "Cakes & Bakes",
+      "description": "Cream cheese frosting, walnuts",
+      "price": 5.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_182",
+      "restaurantId": "rst_21",
+      "name": "Gelato Trio",
+      "category": "Frozen",
+      "description": "Pistachio, stracciatella, lemon",
+      "price": 6,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_183",
+      "restaurantId": "rst_21",
+      "name": "Affogato",
+      "category": "Frozen",
+      "description": "Vanilla gelato, espresso shot",
+      "price": 5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_184",
+      "restaurantId": "rst_21",
+      "name": "Belgian Waffle",
+      "category": "Pastries",
+      "description": "Maple, berries, cream",
+      "price": 7,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": []
+    },
+    {
+      "id": "dish_185",
+      "restaurantId": "rst_21",
+      "name": "Cinnamon Roll",
+      "category": "Pastries",
+      "description": "Warm, vanilla glaze",
+      "price": 4.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": []
+    },
+    {
+      "id": "dish_186",
+      "restaurantId": "rst_21",
+      "name": "Cappuccino",
+      "category": "Drinks",
+      "description": "Double shot, velvet foam",
+      "price": 3.5,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=75",
+      "popular": true,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dish_187",
+      "restaurantId": "rst_21",
+      "name": "Hot Chocolate",
+      "category": "Drinks",
+      "description": "Dark Belgian chocolate",
+      "price": 4,
+      "currency": "USD",
+      "image": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=75",
+      "popular": false,
+      "customization": [
+        {
+          "group": "Size",
+          "type": "single",
+          "required": true,
+          "options": [
+            {
+              "name": "Regular",
+              "priceDelta": 0
+            },
+            {
+              "name": "Large",
+              "priceDelta": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "promos": [
+    {
+      "id": "promo_01",
+      "code": "NOMLY20",
+      "valid": true,
+      "discountPct": 20,
+      "description": "20% off your order",
+      "minSubtotal": 0
+    },
+    {
+      "id": "promo_02",
+      "code": "FREESHIP",
+      "valid": true,
+      "discountPct": 0,
+      "freeDelivery": true,
+      "description": "Free delivery",
+      "minSubtotal": 15
+    },
+    {
+      "id": "promo_03",
+      "code": "TACO10",
+      "valid": true,
+      "discountPct": 10,
+      "description": "10% off",
+      "minSubtotal": 10
+    }
+  ],
+  "favorites": [
+    {
+      "id": "fav_01",
+      "userId": "usr_01",
+      "restaurants": [
+        "rst_01",
+        "rst_07",
+        "rst_16"
+      ],
+      "dishes": [
+        "dish_001",
+        "dish_021"
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord_001",
+      "userId": "usr_01",
+      "restaurantId": "rst_01",
+      "restaurantName": "Napoli Wood-Fired",
+      "restaurantCover": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=75",
+      "addressId": "adr_01",
+      "items": [
+        {
+          "dishId": "dish_001",
+          "restaurantId": "rst_01",
+          "name": "Margherita",
+          "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 12.5,
+          "quantity": 1,
+          "selectedOptions": [],
+          "lineTotal": 12.5,
+          "instructions": ""
+        },
+        {
+          "dishId": "dish_002",
+          "restaurantId": "rst_01",
+          "name": "Pepperoni",
+          "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 14,
+          "quantity": 2,
+          "selectedOptions": [],
+          "lineTotal": 28,
+          "instructions": ""
+        }
+      ],
+      "totals": {
+        "subtotal": 40.5,
+        "discount": 0,
+        "deliveryFee": 0,
+        "serviceFee": 2.02,
+        "tax": 3.24,
+        "tip": 2,
+        "total": 47.76
+      },
+      "promoCode": null,
+      "paymentMethod": "Visa •••• 4242",
+      "scheduledFor": null,
+      "status": "delivered",
+      "placedAt": "2026-06-02T19:24:00Z",
+      "etaMinutes": 0
+    },
+    {
+      "id": "ord_002",
+      "userId": "usr_01",
+      "restaurantId": "rst_04",
+      "restaurantName": "Patty Palace",
+      "restaurantCover": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=75",
+      "addressId": "adr_01",
+      "items": [
+        {
+          "dishId": "dish_031",
+          "restaurantId": "rst_04",
+          "name": "Classic Cheeseburger",
+          "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 11,
+          "quantity": 1,
+          "selectedOptions": [],
+          "lineTotal": 11,
+          "instructions": ""
+        },
+        {
+          "dishId": "dish_032",
+          "restaurantId": "rst_04",
+          "name": "Bacon Double",
+          "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 14.5,
+          "quantity": 2,
+          "selectedOptions": [],
+          "lineTotal": 29,
+          "instructions": ""
+        }
+      ],
+      "totals": {
+        "subtotal": 40,
+        "discount": 0,
+        "deliveryFee": 1.49,
+        "serviceFee": 2,
+        "tax": 3.2,
+        "tip": 2,
+        "total": 48.69
+      },
+      "promoCode": null,
+      "paymentMethod": "Visa •••• 4242",
+      "scheduledFor": null,
+      "status": "delivered",
+      "placedAt": "2026-05-28T13:10:00Z",
+      "etaMinutes": 0
+    },
+    {
+      "id": "ord_003",
+      "userId": "usr_01",
+      "restaurantId": "rst_07",
+      "restaurantName": "Sakura Sushi",
+      "restaurantCover": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1000&q=75",
+      "addressId": "adr_01",
+      "items": [
+        {
+          "dishId": "dish_058",
+          "restaurantId": "rst_07",
+          "name": "Salmon Nigiri (4pc)",
+          "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 9,
+          "quantity": 1,
+          "selectedOptions": [],
+          "lineTotal": 9,
+          "instructions": ""
+        },
+        {
+          "dishId": "dish_059",
+          "restaurantId": "rst_07",
+          "name": "Spicy Tuna Roll",
+          "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 10.5,
+          "quantity": 2,
+          "selectedOptions": [],
+          "lineTotal": 21,
+          "instructions": ""
+        }
+      ],
+      "totals": {
+        "subtotal": 30,
+        "discount": 0,
+        "deliveryFee": 1.49,
+        "serviceFee": 1.5,
+        "tax": 2.4,
+        "tip": 2,
+        "total": 37.39
+      },
+      "promoCode": null,
+      "paymentMethod": "Visa •••• 4242",
+      "scheduledFor": null,
+      "status": "delivered",
+      "placedAt": "2026-05-20T20:05:00Z",
+      "etaMinutes": 0
+    },
+    {
+      "id": "ord_004",
+      "userId": "usr_01",
+      "restaurantId": "rst_10",
+      "restaurantName": "El Camino Tacos",
+      "restaurantCover": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1000&q=75",
+      "addressId": "adr_01",
+      "items": [
+        {
+          "dishId": "dish_085",
+          "restaurantId": "rst_10",
+          "name": "Al Pastor Tacos (3)",
+          "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 10,
+          "quantity": 1,
+          "selectedOptions": [],
+          "lineTotal": 10,
+          "instructions": ""
+        },
+        {
+          "dishId": "dish_086",
+          "restaurantId": "rst_10",
+          "name": "Carne Asada Tacos (3)",
+          "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 11,
+          "quantity": 2,
+          "selectedOptions": [],
+          "lineTotal": 22,
+          "instructions": ""
+        }
+      ],
+      "totals": {
+        "subtotal": 32,
+        "discount": 0,
+        "deliveryFee": 1.49,
+        "serviceFee": 1.6,
+        "tax": 2.56,
+        "tip": 2,
+        "total": 39.65
+      },
+      "promoCode": null,
+      "paymentMethod": "Visa •••• 4242",
+      "scheduledFor": null,
+      "status": "delivered",
+      "placedAt": "2026-05-11T12:40:00Z",
+      "etaMinutes": 0
+    },
+    {
+      "id": "ord_005",
+      "userId": "usr_01",
+      "restaurantId": "rst_13",
+      "restaurantName": "Green Fork",
+      "restaurantCover": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=75",
+      "addressId": "adr_01",
+      "items": [
+        {
+          "dishId": "dish_112",
+          "restaurantId": "rst_13",
+          "name": "Caesar Salad",
+          "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 9.5,
+          "quantity": 1,
+          "selectedOptions": [],
+          "lineTotal": 9.5,
+          "instructions": ""
+        },
+        {
+          "dishId": "dish_113",
+          "restaurantId": "rst_13",
+          "name": "Greek Bowl",
+          "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 10.5,
+          "quantity": 2,
+          "selectedOptions": [],
+          "lineTotal": 21,
+          "instructions": ""
+        }
+      ],
+      "totals": {
+        "subtotal": 30.5,
+        "discount": 0,
+        "deliveryFee": 0,
+        "serviceFee": 1.53,
+        "tax": 2.44,
+        "tip": 2,
+        "total": 36.47
+      },
+      "promoCode": null,
+      "paymentMethod": "Visa •••• 4242",
+      "scheduledFor": null,
+      "status": "delivered",
+      "placedAt": "2026-04-30T21:15:00Z",
+      "etaMinutes": 0
+    },
+    {
+      "id": "ord_active",
+      "userId": "usr_01",
+      "restaurantId": "rst_07",
+      "restaurantName": "Sakura Sushi",
+      "restaurantCover": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1000&q=75",
+      "addressId": "adr_01",
+      "items": [
+        {
+          "dishId": "dish_058",
+          "restaurantId": "rst_07",
+          "name": "Salmon Nigiri (4pc)",
+          "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 9,
+          "quantity": 2,
+          "selectedOptions": [],
+          "lineTotal": 18,
+          "instructions": ""
+        },
+        {
+          "dishId": "dish_060",
+          "restaurantId": "rst_07",
+          "name": "Dragon Roll",
+          "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=800&q=75",
+          "unitPrice": 13,
+          "quantity": 1,
+          "selectedOptions": [],
+          "lineTotal": 13,
+          "instructions": ""
+        }
+      ],
+      "totals": {
+        "subtotal": 31,
+        "discount": 0,
+        "deliveryFee": 1.49,
+        "serviceFee": 1.55,
+        "tax": 2.48,
+        "tip": 3,
+        "total": 39.52
+      },
+      "promoCode": "NOMLY20",
+      "paymentMethod": "Visa •••• 4242",
+      "scheduledFor": null,
+      "status": "on_the_way",
+      "placedAt": "2026-06-17T18:05:00Z",
+      "etaMinutes": 12,
+      "courier": {
+        "name": "Diego Hernández",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+        "phone": "+52 55 9876 5432",
+        "lat": 19.4166,
+        "lng": -99.1492
+      },
+      "route": [
+        [
+          19.4166,
+          -99.1492
+        ],
+        [
+          19.3933,
+          -99.1626
+        ],
+        [
+          19.37,
+          -99.176
+        ]
+      ]
+    }
+  ],
+  "notifications": [
+    {
+      "id": "ntf_01",
+      "type": "order",
+      "title": "Your order is on the way!",
+      "body": "Sakura Sushi • Diego is heading to you",
+      "read": false,
+      "date": "2026-06-17T18:20:00Z"
+    },
+    {
+      "id": "ntf_02",
+      "type": "order",
+      "title": "Order delivered",
+      "body": "Enjoy your meal from Napoli Wood-Fired",
+      "read": false,
+      "date": "2026-06-02T19:55:00Z"
+    },
+    {
+      "id": "ntf_03",
+      "type": "offer",
+      "title": "20% off this weekend",
+      "body": "Use code NOMLY20 at checkout",
+      "read": true,
+      "date": "2026-06-15T09:00:00Z"
+    },
+    {
+      "id": "ntf_04",
+      "type": "offer",
+      "title": "Free delivery week",
+      "body": "On all orders over $20",
+      "read": true,
+      "date": "2026-06-12T09:00:00Z"
+    },
+    {
+      "id": "ntf_05",
+      "type": "order",
+      "title": "Rate your last order",
+      "body": "How was Sakura Sushi?",
+      "read": true,
+      "date": "2026-05-28T15:00:00Z"
+    },
+    {
+      "id": "ntf_06",
+      "type": "system",
+      "title": "Welcome to Nomly 🎉",
+      "body": "Find your next favourite meal",
+      "read": true,
+      "date": "2026-04-01T09:00:00Z"
+    }
+  ]
+}
