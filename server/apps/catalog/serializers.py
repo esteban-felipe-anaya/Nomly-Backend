@@ -1,3 +1,4 @@
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 
 from .models import (
@@ -101,6 +102,7 @@ class RestaurantDetailSerializer(RestaurantSerializer):
     class Meta(RestaurantSerializer.Meta):
         fields = RestaurantSerializer.Meta.fields + ["menu"]
 
+    @extend_schema_field(MenuCategorySerializer(many=True))
     def get_menu(self, obj):
         return MenuCategorySerializer(obj.categories.all(), many=True).data
 

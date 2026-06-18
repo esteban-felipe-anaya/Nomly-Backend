@@ -3,7 +3,8 @@ from decimal import ROUND_HALF_UP, Decimal
 
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
-from rest_framework import status
+from drf_spectacular.utils import extend_schema, inline_serializer
+from rest_framework import serializers, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -14,6 +15,22 @@ from apps.catalog.models import Dish, Restaurant
 from . import tracking
 from .models import Order, OrderItem, OrderTracking, Promo
 from .serializers import OrderSerializer
+
+_promo_request = inline_serializer(
+    name="PromoValidateRequest",
+    fields={"code": serializers.CharField(), "subtotal": serializers.FloatField(required=False)},
+)
+_promo_response = inline_serializer(
+    name="PromoValidateResponse",
+    fields={
+        "code": serializers.CharField(),
+        "valid": serializers.BooleanField(),
+        "discountPct": serializers.FloatField(),
+        "freeDelivery": serializers.BooleanField(required=False),
+        "description": serializers.CharField(required=False),
+        "reason": serializers.CharField(required=False),
+    },
+)
 
 SERVICE_RATE = Decimal("0.05")
 TAX_RATE = Decimal("0.08")
@@ -28,6 +45,7 @@ def _money(value) -> Decimal:
     return Decimal(str(value or 0)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
 
+@extend_schema(request=_promo_request, responses=_promo_response)
 class PromoValidateView(APIView):
     permission_classes = [AllowAny]
 
@@ -62,10 +80,12 @@ class PromoValidateView(APIView):
 class OrderListCreateView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(responses=OrderSerializer(many=True))
     def get(self, request):
         orders = Order.objects.filter(user=request.user).prefetch_related("items", "tracking")
         return Response(OrderSerializer(orders, many=True).data)
 
+    @extend_schema(responses=OrderSerializer)
     def post(self, request):
         data = request.data
         restaurant = Restaurant.objects.filter(id=data.get("restaurantId")).first()
@@ -163,6 +183,7 @@ class OrderListCreateView(APIView):
         return Response(OrderSerializer(order).data, status=status.HTTP_201_CREATED)
 
 
+@extend_schema(responses=OrderSerializer)
 class OrderDetailView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -175,6 +196,19 @@ class OrderDetailView(APIView):
         return Response(OrderSerializer(order).data)
 
 
+@extend_schema(
+    responses=inline_serializer(
+        name="OrderTracking",
+        fields={
+            "orderId": serializers.CharField(),
+            "status": serializers.CharField(),
+            "etaMinutes": serializers.IntegerField(),
+            "courier": serializers.DictField(required=False),
+            "route": serializers.ListField(child=serializers.ListField()),
+            "steps": serializers.ListField(child=serializers.DictField()),
+        },
+    )
+)
 class OrderTrackingView(APIView):
     permission_classes = [IsAuthenticated]
 

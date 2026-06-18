@@ -3,6 +3,7 @@
 Separate from the Flutter contract serializers so the public API shapes stay
 frozen while the admin gets rich CRUD.
 """
+from drf_spectacular.utils import extend_schema_serializer
 from rest_framework import serializers
 
 from apps.accounts.models import User
@@ -19,6 +20,7 @@ from apps.engagement.models import Notification
 from apps.orders.models import Order, OrderItem, Promo
 
 
+@extend_schema_serializer(component_name="AdminCuisine")
 class CuisineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cuisine
@@ -26,6 +28,7 @@ class CuisineSerializer(serializers.ModelSerializer):
         extra_kwargs = {"id": {"required": False}}
 
 
+@extend_schema_serializer(component_name="AdminRestaurant")
 class RestaurantSerializer(serializers.ModelSerializer):
     cuisine_name = serializers.CharField(source="cuisine.name", read_only=True)
 
@@ -39,12 +42,14 @@ class RestaurantSerializer(serializers.ModelSerializer):
         extra_kwargs = {"id": {"required": False}}
 
 
+@extend_schema_serializer(component_name="AdminMenuCategory")
 class MenuCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = MenuCategory
         fields = ["id", "restaurant", "name", "order"]
 
 
+@extend_schema_serializer(component_name="AdminCustomizationOption")
 class CustomizationOptionSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
 
@@ -53,6 +58,7 @@ class CustomizationOptionSerializer(serializers.ModelSerializer):
         fields = ["id", "name", "price_delta", "order"]
 
 
+@extend_schema_serializer(component_name="AdminCustomizationGroup")
 class CustomizationGroupSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(required=False)
     options = CustomizationOptionSerializer(many=True, required=False)
@@ -62,6 +68,7 @@ class CustomizationGroupSerializer(serializers.ModelSerializer):
         fields = ["id", "name", "type", "required", "order", "options"]
 
 
+@extend_schema_serializer(component_name="AdminDish")
 class DishSerializer(serializers.ModelSerializer):
     customization = CustomizationGroupSerializer(many=True, required=False)
     restaurant_name = serializers.CharField(source="restaurant.name", read_only=True)
@@ -106,6 +113,7 @@ class DishSerializer(serializers.ModelSerializer):
         return instance
 
 
+@extend_schema_serializer(component_name="AdminBanner")
 class BannerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Banner
@@ -113,6 +121,7 @@ class BannerSerializer(serializers.ModelSerializer):
         extra_kwargs = {"id": {"required": False}}
 
 
+@extend_schema_serializer(component_name="AdminPromo")
 class PromoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Promo
@@ -121,6 +130,7 @@ class PromoSerializer(serializers.ModelSerializer):
         extra_kwargs = {"id": {"required": False}}
 
 
+@extend_schema_serializer(component_name="AdminUser")
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -128,6 +138,7 @@ class UserSerializer(serializers.ModelSerializer):
                   "is_active", "date_joined"]
 
 
+@extend_schema_serializer(component_name="AdminOrderItem")
 class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
@@ -135,6 +146,7 @@ class OrderItemSerializer(serializers.ModelSerializer):
                   "selected_options", "instructions", "line_total"]
 
 
+@extend_schema_serializer(component_name="AdminOrder")
 class OrderSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(many=True, read_only=True)
     user_email = serializers.CharField(source="user.email", read_only=True)
@@ -150,6 +162,7 @@ class OrderSerializer(serializers.ModelSerializer):
         ]
 
 
+@extend_schema_serializer(component_name="AdminNotification")
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification

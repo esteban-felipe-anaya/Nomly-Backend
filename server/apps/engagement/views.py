@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from drf_spectacular.utils import extend_schema
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -18,10 +19,12 @@ class FavoritesView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(responses=FavoritesSerializer(many=True))
     def get(self, request):
         fav = _get_or_create_favorites(request.user)
         return Response([FavoritesSerializer(fav).data])
 
+    @extend_schema(request=FavoritesSerializer, responses=FavoritesSerializer)
     def put(self, request, pk=None):
         fav = _get_or_create_favorites(request.user)
         fav.restaurants = request.data.get("restaurants", fav.restaurants)
@@ -30,6 +33,7 @@ class FavoritesView(APIView):
         return Response(FavoritesSerializer(fav).data)
 
 
+@extend_schema(responses=NotificationSerializer(many=True))
 class NotificationListView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -38,6 +42,7 @@ class NotificationListView(APIView):
         return Response(NotificationSerializer(qs, many=True).data)
 
 
+@extend_schema(request=NotificationSerializer, responses=NotificationSerializer)
 class NotificationDetailView(APIView):
     permission_classes = [IsAuthenticated]
 

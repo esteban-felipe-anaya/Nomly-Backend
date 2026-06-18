@@ -1,11 +1,15 @@
+import os
 import uuid
 from datetime import timedelta
 
+from django.core.files.storage import default_storage
 from django.db.models import Avg, Count, Sum
 from django.utils import timezone
-from rest_framework import filters, status, viewsets
+from drf_spectacular.utils import extend_schema, inline_serializer
+from rest_framework import filters, serializers, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -160,6 +164,36 @@ class NotificationViewSet(_AdminViewSet):
             for u in User.objects.all()
         ])
         return Response({"created": len(created)}, status=status.HTTP_201_CREATED)
+
+
+_ALLOWED_IMAGE_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}
+
+
+@extend_schema(
+    request={"multipart/form-data": inline_serializer(
+        name="UploadRequest", fields={"file": serializers.FileField()}
+    )},
+    responses=inline_serializer(name="UploadResponse", fields={"url": serializers.CharField()}),
+)
+class UploadView(APIView):
+    """Accepts a multipart image upload and returns a servable URL. The admin
+    stores that URL in the existing image fields (cover/logo/image), so the
+    API contract (URL strings) is unchanged."""
+
+    permission_classes = [IsAdminUser]
+    parser_classes = [MultiPartParser, FormParser]
+
+    def post(self, request):
+        upload = request.FILES.get("file")
+        if not upload:
+            return Response({"detail": "No file provided (field 'file')."}, status=400)
+        ext = os.path.splitext(upload.name)[1].lower()
+        if ext not in _ALLOWED_IMAGE_EXT:
+            return Response({"detail": f"Unsupported file type '{ext}'."}, status=400)
+        name = f"uploads/{uuid.uuid4().hex}{ext}"
+        saved = default_storage.save(name, upload)
+        url = request.build_absolute_uri(default_storage.url(saved))
+        return Response({"url": url}, status=status.HTTP_201_CREATED)
 
 
 class StatsView(APIView):

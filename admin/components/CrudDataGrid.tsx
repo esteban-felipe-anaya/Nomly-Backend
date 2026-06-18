@@ -99,7 +99,7 @@ export default function CrudDataGrid<T extends { id: string | number }>({
         items.push(
           <GridActionsCellItem
             key="edit"
-            icon={<EditIcon />}
+            icon={<EditIcon color="primary" />}
             label="Edit"
             onClick={() => onEdit(p.row)}
           />,
@@ -109,7 +109,7 @@ export default function CrudDataGrid<T extends { id: string | number }>({
         items.push(
           <GridActionsCellItem
             key="delete"
-            icon={<DeleteIcon />}
+            icon={<DeleteIcon color="error" />}
             label="Delete"
             onClick={() => onDelete(p.row)}
           />,

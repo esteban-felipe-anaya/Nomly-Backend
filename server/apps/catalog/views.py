@@ -1,5 +1,6 @@
 from django.db.models import F, Q
 from django.shortcuts import get_object_or_404
+from drf_spectacular.utils import extend_schema
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -30,6 +31,7 @@ class RestaurantListView(ListAPIView):
     and an X-Total-Count header (no DRF pagination wrapper)."""
 
     serializer_class = RestaurantSerializer
+    queryset = Restaurant.objects.none()  # real queryset built in _filtered_queryset
 
     def _filtered_queryset(self):
         qs = Restaurant.objects.select_related("cuisine").all()
@@ -86,6 +88,7 @@ class RestaurantDetailView(RetrieveAPIView):
     serializer_class = RestaurantDetailSerializer
 
 
+@extend_schema(responses=MenuCategorySerializer(many=True))
 class RestaurantMenuView(APIView):
     def get(self, request, pk):
         restaurant = get_object_or_404(Restaurant, pk=pk)

@@ -23,7 +23,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ConfirmDialog from "@/components/ConfirmDialog";
 import CrudDataGrid from "@/components/CrudDataGrid";
-import ImagePreview from "@/components/ImagePreview";
+import ImageUploadField from "@/components/ImageUploadField";
 import { useSnackbar } from "@/components/providers/SnackbarProvider";
 import { apiErrorMessage } from "@/lib/api";
 import type { Restaurant } from "@/lib/types";
@@ -192,7 +192,7 @@ export default function RestaurantsPage() {
       getActions: (p) => [
         <GridActionsCellItem
           key="menu"
-          icon={<OpenInNewIcon />}
+          icon={<OpenInNewIcon color="info" />}
           label="Manage menu"
           onClick={() => router.push(`/restaurants/${p.row.id}`)}
         />,
@@ -245,18 +245,15 @@ export default function RestaurantsPage() {
                 )}
               />
             </Stack>
-            <TextField
-              label="Cover image URL"
-              fullWidth
+            <ImageUploadField
+              label="Cover image"
               value={form.cover}
-              onChange={(e) => set("cover", e.target.value)}
+              onChange={(url) => set("cover", url)}
             />
-            <ImagePreview url={form.cover} />
-            <TextField
-              label="Logo image URL"
-              fullWidth
+            <ImageUploadField
+              label="Logo image"
               value={form.logo}
-              onChange={(e) => set("logo", e.target.value)}
+              onChange={(url) => set("logo", url)}
             />
             <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
               <TextField

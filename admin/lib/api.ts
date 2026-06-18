@@ -30,6 +30,29 @@ api.interceptors.response.use(
   },
 );
 
+/**
+ * Uploads a single file via multipart/form-data to /admin-api/upload and returns
+ * the absolute media URL. The shared instance defaults to JSON, so we explicitly
+ * send FormData and let the browser set the multipart boundary. The Bearer
+ * interceptor still applies.
+ */
+export async function uploadImage(
+  file: File,
+  onProgress?: (percent: number) => void,
+): Promise<string> {
+  const form = new FormData();
+  form.append("file", file);
+  const { data } = await api.post<{ url: string }>("/admin-api/upload", form, {
+    headers: { "Content-Type": "multipart/form-data" },
+    onUploadProgress: (e) => {
+      if (onProgress && e.total) {
+        onProgress(Math.round((e.loaded / e.total) * 100));
+      }
+    },
+  });
+  return data.url;
+}
+
 export function apiErrorMessage(error: unknown, fallback = "Something went wrong"): string {
   if (axios.isAxiosError(error)) {
     const data = error.response?.data as

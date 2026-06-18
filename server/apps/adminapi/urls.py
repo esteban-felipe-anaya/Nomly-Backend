@@ -11,6 +11,7 @@ from .views import (
     PromoViewSet,
     RestaurantViewSet,
     StatsView,
+    UploadView,
     UserViewSet,
 )
 
@@ -27,5 +28,6 @@ router.register("notifications", NotificationViewSet, basename="admin-notificati
 
 urlpatterns = [
     path("stats", StatsView.as_view()),
+    path("upload", UploadView.as_view()),
     path("", include(router.urls)),
 ]

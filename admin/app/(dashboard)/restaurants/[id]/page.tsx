@@ -211,7 +211,11 @@ export default function RestaurantMenuPage() {
                     key={c.id}
                     secondaryAction={
                       <Stack direction="row">
-                        <IconButton size="small" onClick={() => openEditCat(c)}>
+                        <IconButton
+                          size="small"
+                          color="primary"
+                          onClick={() => openEditCat(c)}
+                        >
                           <EditIcon fontSize="small" />
                         </IconButton>
                         <IconButton
@@ -269,6 +273,7 @@ export default function RestaurantMenuPage() {
                       <Stack direction="row">
                         <IconButton
                           size="small"
+                          color="primary"
                           onClick={() => {
                             setEditingDish(d);
                             setDishOpen(true);

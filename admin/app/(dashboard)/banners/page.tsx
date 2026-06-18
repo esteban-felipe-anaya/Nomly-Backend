@@ -17,7 +17,7 @@ import { useState } from "react";
 import { z } from "zod";
 import ConfirmDialog from "@/components/ConfirmDialog";
 import CrudDataGrid from "@/components/CrudDataGrid";
-import ImagePreview from "@/components/ImagePreview";
+import ImageUploadField from "@/components/ImageUploadField";
 import { useSnackbar } from "@/components/providers/SnackbarProvider";
 import { apiErrorMessage } from "@/lib/api";
 import type { Banner } from "@/lib/types";
@@ -51,14 +51,11 @@ export default function BannersPage() {
     control,
     handleSubmit,
     reset,
-    watch,
     formState: { errors },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: { title: "", subtitle: "", image: "", restaurant: null },
   });
-
-  const imageUrl = watch("image");
 
   const openCreate = () => {
     setEditing(null);
@@ -144,8 +141,17 @@ export default function BannersPage() {
                 helperText={errors.title?.message}
               />
               <TextField label="Subtitle" fullWidth {...register("subtitle")} />
-              <TextField label="Image URL" fullWidth {...register("image")} />
-              <ImagePreview url={imageUrl} />
+              <Controller
+                control={control}
+                name="image"
+                render={({ field }) => (
+                  <ImageUploadField
+                    label="Image"
+                    value={field.value ?? ""}
+                    onChange={field.onChange}
+                  />
+                )}
+              />
               <Controller
                 control={control}
                 name="restaurant"

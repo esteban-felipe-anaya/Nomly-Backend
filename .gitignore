@@ -4,6 +4,7 @@ __pycache__/
 *.py[cod]
 *.sqlite3
 server/staticfiles/
+server/media/
 
 # Env / secrets
 .env

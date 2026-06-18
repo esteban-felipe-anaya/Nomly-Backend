@@ -145,11 +145,23 @@ The mock remains the **contract reference**; the Django API is built and tested 
 **Admin API (staff-only, `/admin-api`):** CRUD for `cuisines, restaurants, menu-categories,
 dishes` (nested customization), `banners, promos, notifications`; read-only `users, orders`;
 `POST /admin-api/orders/:id/set_status`; `POST /admin-api/notifications/broadcast`;
-`GET /admin-api/stats`. Used by the Next.js dashboard.
+`GET /admin-api/stats`; and **`POST /admin-api/upload`** (multipart `file`) which stores a local
+image and returns `{ url }`. Used by the Next.js dashboard.
+
+**Uploaded media:** local image uploads are saved under `MEDIA_ROOT` (`server/media/`) and served
+at `MEDIA_URL` (`/media/...`) in development. The admin stores the returned URL in the existing
+image fields, so the API contract (URL strings) is unchanged. In production serve `/media` via a
+real file server or object storage.
 
 Order totals are always computed **server-side** (`POST /orders` ignores client totals). Tracking
 (`/orders/:id/tracking`) advances `confirmed → preparing → picked_up → on_the_way → delivered`
 over time and interpolates the courier between the restaurant and the delivery address.
+
+**API docs (OpenAPI 3 via drf-spectacular):** with the server running —
+[`/api/docs`](http://localhost:8000/api/docs) (Swagger UI),
+[`/api/redoc`](http://localhost:8000/api/redoc) (ReDoc), and the raw schema at `/api/schema`.
+Use the **Authorize** button in Swagger UI with a `Bearer <token>` from `/auth/login` to try the
+protected endpoints.
 
 ---
 

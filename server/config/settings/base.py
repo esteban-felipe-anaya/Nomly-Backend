@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "django_filters",
+    "drf_spectacular",
     # local
     "apps.accounts",
     "apps.catalog",
@@ -104,6 +105,10 @@ STORAGES = {
     "staticfiles": {"BACKEND": "whitenoise.storage.CompressedStaticFilesStorage"},
 }
 
+# Uploaded media (locally-uploaded images via /admin-api/upload).
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # --- DRF ---------------------------------------------------------------------
@@ -120,6 +125,18 @@ REST_FRAMEWORK = {
     "UNAUTHENTICATED_USER": None,
     # Emit money as JSON numbers (not strings) to match the json-server mock.
     "COERCE_DECIMAL_TO_STRING": False,
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+# OpenAPI schema / Swagger UI (drf-spectacular).
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Nomly API",
+    "DESCRIPTION": "Backend for the Nomly food-delivery app. The public endpoints "
+    "mirror the json-server mock contract; `/admin-api/*` is the staff-only "
+    "dashboard API.",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "SWAGGER_UI_SETTINGS": {"persistAuthorization": True},
 }
 
 SIMPLE_JWT = {

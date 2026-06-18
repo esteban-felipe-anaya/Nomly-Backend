@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import CustomizationEditor from "@/components/CustomizationEditor";
-import ImagePreview from "@/components/ImagePreview";
+import ImageUploadField from "@/components/ImageUploadField";
 import { useSnackbar } from "@/components/providers/SnackbarProvider";
 import { apiErrorMessage } from "@/lib/api";
 import type {
@@ -209,13 +209,11 @@ export default function DishFormDialog({
             value={form.description}
             onChange={(e) => set("description", e.target.value)}
           />
-          <TextField
-            label="Image URL"
-            fullWidth
+          <ImageUploadField
+            label="Image"
             value={form.image}
-            onChange={(e) => set("image", e.target.value)}
+            onChange={(url) => set("image", url)}
           />
-          <ImagePreview url={form.image} />
           <FormControlLabel
             control={
               <Switch
