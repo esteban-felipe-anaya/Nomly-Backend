@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Order, OrderItem, OrderTracking, Promo
+from .models import Courier, Order, OrderItem, OrderTracking, Promo
 
 
 @admin.register(Promo)
@@ -8,6 +8,13 @@ class PromoAdmin(admin.ModelAdmin):
     list_display = ["code", "discount_pct", "free_delivery", "min_subtotal", "active"]
     list_filter = ["active", "free_delivery"]
     search_fields = ["code"]
+
+
+@admin.register(Courier)
+class CourierAdmin(admin.ModelAdmin):
+    list_display = ["name", "phone", "vehicle", "active"]
+    list_filter = ["active", "vehicle"]
+    search_fields = ["name", "phone"]
 
 
 class OrderItemInline(admin.TabularInline):

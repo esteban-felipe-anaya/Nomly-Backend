@@ -79,6 +79,38 @@ export async function updateProfile(payload: {
   return data.user;
 }
 
+/**
+ * User-scoped address endpoints (NOT under /admin-api). These exchange camelCase
+ * JSON and return a plain array (no pagination). The shared `api` instance
+ * auto-attaches the Bearer token.
+ */
+export async function listAddresses(): Promise<import("./types").Address[]> {
+  const { data } = await api.get<import("./types").Address[]>("/addresses");
+  return data;
+}
+
+export async function createAddress(
+  body: import("./types").AddressInput,
+): Promise<import("./types").Address> {
+  const { data } = await api.post<import("./types").Address>("/addresses", body);
+  return data;
+}
+
+export async function updateAddress(
+  id: string,
+  body: import("./types").AddressInput,
+): Promise<import("./types").Address> {
+  const { data } = await api.put<import("./types").Address>(
+    `/addresses/${id}`,
+    body,
+  );
+  return data;
+}
+
+export async function deleteAddress(id: string): Promise<void> {
+  await api.delete(`/addresses/${id}`);
+}
+
 export function apiErrorMessage(error: unknown, fallback = "Something went wrong"): string {
   if (axios.isAxiosError(error)) {
     const data = error.response?.data as

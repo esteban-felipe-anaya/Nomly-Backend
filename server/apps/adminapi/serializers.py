@@ -17,7 +17,7 @@ from apps.catalog.models import (
     Restaurant,
 )
 from apps.engagement.models import Notification
-from apps.orders.models import Order, OrderItem, Promo
+from apps.orders.models import Courier, Order, OrderItem, Promo
 
 
 @extend_schema_serializer(component_name="AdminCuisine")
@@ -144,6 +144,14 @@ class AddressSerializer(serializers.ModelSerializer):
         model = Address
         fields = ["id", "user", "label", "line1", "line2", "city", "notes",
                   "lat", "lng", "is_default"]
+
+
+@extend_schema_serializer(component_name="AdminCourier")
+class CourierSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Courier
+        fields = ["id", "name", "avatar", "phone", "vehicle", "active"]
+        extra_kwargs = {"id": {"required": False}}
 
 
 @extend_schema_serializer(component_name="AdminOrderItem")

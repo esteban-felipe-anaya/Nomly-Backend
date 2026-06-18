@@ -103,12 +103,15 @@ def build_tracking(order, now=None):
     progress = courier_progress(order.placed_at, order.status, now)
     pos = interpolate(route, progress) if route else None
 
+    # Prefer the assigned Courier (DB), fall back to the legacy snapshot fields.
     courier = None
-    if tracking and tracking.courier_name:
+    assigned = tracking.courier if tracking else None
+    name = assigned.name if assigned else (tracking.courier_name if tracking else "")
+    if name:
         courier = {
-            "name": tracking.courier_name,
-            "avatar": tracking.courier_avatar,
-            "phone": tracking.courier_phone,
+            "name": name,
+            "avatar": assigned.avatar if assigned else tracking.courier_avatar,
+            "phone": assigned.phone if assigned else tracking.courier_phone,
             "lat": pos[0] if pos else (route[0][0] if route else 0),
             "lng": pos[1] if pos else (route[0][1] if route else 0),
         }

@@ -81,13 +81,34 @@ class OrderItem(models.Model):
         return f"{self.quantity}× {self.name}"
 
 
+class Courier(models.Model):
+    """A delivery courier, managed in the admin and assigned to orders."""
+
+    id = models.CharField(primary_key=True, max_length=64)
+    name = models.CharField(max_length=120)
+    avatar = models.CharField(max_length=500, blank=True, default="")
+    phone = models.CharField(max_length=40, blank=True, default="")
+    vehicle = models.CharField(max_length=60, blank=True, default="")
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+
+
 class OrderTracking(models.Model):
     """Courier + route for an order. Status/ETA/position are computed from
     elapsed time in the tracking endpoint (see apps/orders/tracking.py)."""
 
     order = models.OneToOneField(Order, on_delete=models.CASCADE, related_name="tracking")
+    # Assigned courier (preferred). Snapshot fields below are a fallback.
+    courier = models.ForeignKey(
+        Courier, on_delete=models.SET_NULL, null=True, blank=True, related_name="trackings"
+    )
     courier_name = models.CharField(max_length=120, blank=True, default="")
-    courier_avatar = models.URLField(max_length=500, blank=True, default="")
+    courier_avatar = models.CharField(max_length=500, blank=True, default="")
     courier_phone = models.CharField(max_length=40, blank=True, default="")
     # Route as a list of [lat, lng] pairs: restaurant -> ... -> delivery address.
     route = models.JSONField(default=list, blank=True)

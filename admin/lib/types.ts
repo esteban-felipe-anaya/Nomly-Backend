@@ -113,6 +113,37 @@ export interface AdminUser {
   date_joined: string;
 }
 
+export interface Address {
+  id: string;
+  userId: string;
+  label: string;
+  line1: string;
+  line2?: string | null;
+  city?: string | null;
+  notes?: string | null;
+  lat?: number | null;
+  lng?: number | null;
+  isDefault: boolean;
+}
+
+export interface AddressInput {
+  label: string;
+  line1: string;
+  line2?: string;
+  city?: string;
+  notes?: string;
+  isDefault?: boolean;
+}
+
+export interface AdminCourier {
+  id: string;
+  name: string;
+  avatar?: string | null;
+  phone?: string | null;
+  vehicle?: string | null;
+  active: boolean;
+}
+
 export type OrderStatus =
   | "confirmed"
   | "preparing"

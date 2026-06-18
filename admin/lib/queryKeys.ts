@@ -8,6 +8,7 @@ export const queryKeys = {
   menuCategories: (params?: unknown) => ["menu-categories", params] as const,
   banners: (params?: unknown) => ["banners", params] as const,
   promos: (params?: unknown) => ["promos", params] as const,
+  couriers: (params?: unknown) => ["couriers", params] as const,
   users: (params?: unknown) => ["users", params] as const,
   orders: (params?: unknown) => ["orders", params] as const,
   notifications: (params?: unknown) => ["notifications", params] as const,

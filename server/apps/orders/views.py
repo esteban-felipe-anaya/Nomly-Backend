@@ -13,7 +13,7 @@ from apps.accounts.models import Address
 from apps.catalog.models import Dish, Restaurant
 
 from . import tracking
-from .models import Order, OrderItem, OrderTracking, Promo
+from .models import Courier, Order, OrderItem, OrderTracking, Promo
 from .serializers import OrderSerializer
 
 _promo_request = inline_serializer(
@@ -34,11 +34,6 @@ _promo_response = inline_serializer(
 
 SERVICE_RATE = Decimal("0.05")
 TAX_RATE = Decimal("0.08")
-DEFAULT_COURIER = {
-    "name": "Diego Hernández",
-    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
-    "phone": "+52 55 9876 5432",
-}
 
 
 def _money(value) -> Decimal:
@@ -173,9 +168,7 @@ class OrderListCreateView(APIView):
             ]
         OrderTracking.objects.create(
             order=order,
-            courier_name=DEFAULT_COURIER["name"],
-            courier_avatar=DEFAULT_COURIER["avatar"],
-            courier_phone=DEFAULT_COURIER["phone"],
+            courier=Courier.objects.filter(active=True).order_by("name").first(),
             route=route,
         )
 

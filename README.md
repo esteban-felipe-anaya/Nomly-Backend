@@ -2,13 +2,13 @@
 
 The real backend for the **Nomly** cross-platform Flutter food-delivery app:
 
-- **Django 5 + Django REST Framework** API on **PostgreSQL**, at **exact parity** with the
-  existing json-server mock contract — the Flutter app works against it by only switching its
-  `baseUrl` (no Flutter code changes).
-- **JWT auth** (`djangorestframework-simplejwt`), server-side order totals, and a time-based
-  **live order-tracking** simulation (status advances + courier moves along the route).
-- The original **json-server mock is kept** and runnable from the same `db.json`.
-- A **Next.js + Material UI** admin dashboard (`admin/`) for full CRUD + order management + KPIs.
+- **Django 5 + Django REST Framework** API on **PostgreSQL** — the Flutter app talks to it by
+  pointing its `baseUrl` at this server (no Flutter code changes).
+- **JWT auth** (`djangorestframework-simplejwt`), server-side order totals, DB-backed couriers,
+  and a time-based **live order-tracking** simulation (status advances + courier moves along the
+  route).
+- A **Next.js + Material UI** admin dashboard (`admin/`) for full CRUD + order management + KPIs,
+  image upload/crop, and courier management.
 - A secondary **Django admin** at `/django-admin/`.
 
 ```
@@ -18,19 +18,17 @@ Nomly-Backend/
     apps/
       accounts/      custom email User, JWT auth, addresses
       catalog/       cuisines, restaurants, menu categories, dishes, customization, banners
-      orders/        promos, orders, order items, tracking/courier (+ server-side totals)
+      orders/        promos, orders, order items, couriers, tracking (+ server-side totals)
       engagement/    favorites, notifications
       adminapi/      staff-only /admin-api for the Next.js dashboard (CRUD + stats)
-      seed/          `import_mock` management command (db.json -> DB)
+      seed/          `import_mock` command + bundled `seed_data.json`
     manage.py  requirements.txt  .env.example
   admin/             Next.js + MUI admin dashboard
-  mock-api/          KEPT json-server mock (single seed source: db.json)
   Makefile  scripts/  README.md
 ```
 
-`mock-api/db.json` is the **single source of seed truth**: json-server serves it directly and
-`import_mock` loads the same data (real image URLs preserved) into the database, so the mock and
-the real backend start identical.
+`server/apps/seed/seed_data.json` is the bundled seed: `import_mock` loads it (real image URLs
+preserved) into the database so a fresh DB comes up fully populated.
 
 ---
 
@@ -82,12 +80,12 @@ Run from the `backend/` directory (on Windows use Git Bash so `cp`/`sh` work):
 ```bash
 make setup     # venv + install deps + copy .env.example -> .env   (edit DATABASE_URL)
 make migrate   # apply migrations
-make seed      # load mock-api/db.json into the database (idempotent)
+make seed      # load the bundled seed data into the database (idempotent)
 make run       # Django API at http://localhost:8000
 ```
 
-Other targets: `make mock` (json-server at :3000), `make admin` (Next.js admin at :3001),
-`make test`, `make lint`, `make fmt`, `make superuser`, `make reset` (drop SQLite + re-seed).
+Other targets: `make admin` (Next.js admin at :3001), `make test`, `make lint`, `make fmt`,
+`make superuser`, `make reset` (drop SQLite + re-seed).
 
 Equivalent scripts: `scripts/setup.sh`, `scripts/seed.sh`. Or run manually:
 
@@ -105,33 +103,16 @@ it can sign into the Next.js admin, `/admin-api`, and `/django-admin/`).
 
 ## Point the Flutter app at this backend
 
-The Flutter app reads its base URL from `--dart-define=NOMLY_API_BASE_URL`. Switch between the
-mock and the real backend by changing only that value:
+The Flutter app reads its base URL from a `.env` file (`NOMLY_API_BASE_URL`, via flutter_dotenv)
+or `--dart-define=NOMLY_API_BASE_URL`:
 
 ```bash
-# Real Django backend
 flutter run --dart-define=NOMLY_API_BASE_URL=http://localhost:8000
-# json-server mock (fast/offline)
-flutter run --dart-define=NOMLY_API_BASE_URL=http://localhost:3000
+# Android emulator: http://10.0.2.2:8000   |   physical device: http://<your-LAN-ip>:8000
 ```
 
-(Android emulator: use `http://10.0.2.2:<port>`.) Both serve the **same JSON shapes** — the
-Django API mirrors the mock paths, query params (`cuisineId, q, minRating, priceLevel,
-freeDelivery, sort, _page, _limit`), and response bodies, and `/auth/login` returns
-`{ token, user }`.
-
----
-
-## The mock API (kept)
-
-```bash
-cd mock-api && npm install
-npm run mock          # or: npm start  -> http://localhost:3000
-npm run seed          # regenerate db.json
-npm run verify-images # check every image URL returns HTTP 200
-```
-
-The mock remains the **contract reference**; the Django API is built and tested to match it.
+`/auth/login` returns `{ token, user }`; `/restaurants` honors `cuisineId, q, minRating,
+priceLevel, freeDelivery, sort, _page, _limit`.
 
 ---
 
@@ -143,15 +124,17 @@ The mock remains the **contract reference**; the Django API is built and tested 
 `:id/tracking`), `/favorites`, `/notifications`.
 
 **Admin API (staff-only, `/admin-api`):** CRUD for `cuisines, restaurants, menu-categories,
-dishes` (nested customization), `banners, promos, notifications`; read-only `users, orders`;
-`POST /admin-api/orders/:id/set_status`; `POST /admin-api/notifications/broadcast`;
-`GET /admin-api/stats`; and **`POST /admin-api/upload`** (multipart `file`) which stores a local
-image and returns `{ url }`. Used by the Next.js dashboard.
+dishes` (nested customization), `banners, promos, couriers, notifications`; read-only `users,
+orders, addresses` (filter `?user=`); `POST /admin-api/orders/:id/set_status`;
+`POST /admin-api/notifications/broadcast`; `GET /admin-api/stats`; and
+**`POST /admin-api/upload`** (multipart `file`) which stores a local image and returns the
+**relative** `{ url: "/media/uploads/…" }`. Used by the Next.js dashboard.
 
-**Uploaded media:** local image uploads are saved under `MEDIA_ROOT` (`server/media/`) and served
-at `MEDIA_URL` (`/media/...`) in development. The admin stores the returned URL in the existing
-image fields, so the API contract (URL strings) is unchanged. In production serve `/media` via a
-real file server or object storage.
+**Uploaded media:** images are saved under `MEDIA_ROOT` (`server/media/`) and served at
+`MEDIA_URL` (`/media/...`) in development. Image fields store the **relative path only** (e.g.
+`/media/uploads/x.png`); each client prepends its own base URL, so values are host-independent and
+absolute URLs (existing photos) still work. In production serve `/media` via a real file server or
+object storage.
 
 Order totals are always computed **server-side** (`POST /orders` ignores client totals). Tracking
 (`/orders/:id/tracking`) advances `confirmed → preparing → picked_up → on_the_way → delivered`
@@ -174,9 +157,10 @@ npm run dev          # http://localhost:3001
 
 Set `NEXT_PUBLIC_API_BASE_URL` in `admin/.env.local` (defaults to `http://localhost:8000`). Sign
 in with the seeded admin credentials above. Features: JWT login, brand-orange MUI theme with
-light/dark, KPI + charts dashboard, DataGrid CRUD for restaurants (incl. menu/customization),
-dishes, cuisines, banners and promos, order management with status updates, users and
-notification broadcast.
+light/dark, collapsible animated sidebar, KPI + charts dashboard, DataGrid CRUD for restaurants
+(incl. menu/customization), dishes, cuisines, banners, promos and **couriers**, order management
+with status updates, users (with their addresses), notification broadcast, and image
+**upload + crop**. The logged-in admin can edit their own profile and **manage their addresses**.
 
 ---
 
@@ -189,7 +173,7 @@ notification broadcast.
 | `DATABASE_URL` | DB connection | SQLite fallback if unset; use `postgres://…` |
 | `ALLOWED_HOSTS` | comma list | `*` |
 | `CORS_ALLOW_ALL_ORIGINS` / `CORS_ALLOWED_ORIGINS` | CORS | all in dev; explicit in prod |
-| `MOCK_DB_PATH` | seed source | `../mock-api/db.json` |
+| `SEED_DATA_PATH` | seed source (optional) | `apps/seed/seed_data.json` |
 
 `DJANGO_SETTINGS_MODULE` defaults to `config.settings.dev` (manage.py) / `config.settings.prod`
 (wsgi/asgi).

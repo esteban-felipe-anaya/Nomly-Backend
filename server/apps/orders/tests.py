@@ -3,7 +3,7 @@ from rest_framework.test import APITestCase
 from apps.accounts.models import Address, User
 from apps.catalog.models import Cuisine, Restaurant
 
-from .models import Promo
+from .models import Courier, Promo
 
 
 class OrderContractTests(APITestCase):
@@ -36,6 +36,9 @@ class OrderContractTests(APITestCase):
             min_subtotal=0,
             description="20% off",
             active=True,
+        )
+        Courier.objects.create(
+            id="cou_01", name="Diego", phone="+52 55 0000", active=True
         )
         token = self.client.post(
             "/auth/login",

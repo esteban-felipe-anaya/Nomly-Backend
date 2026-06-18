@@ -12,7 +12,7 @@ endif
 # manage.py commands run with cwd=server/ so test discovery and app imports work.
 MANAGE := cd server && $(VENV_FROM_SERVER) manage.py
 
-.PHONY: setup migrate seed run mock admin test lint fmt check superuser reset
+.PHONY: setup migrate seed run admin test lint fmt check superuser reset
 
 ## create venv, install deps, copy .env
 setup:
@@ -26,18 +26,13 @@ setup:
 migrate:
 	$(MANAGE) migrate
 
-## load mock-api/db.json into the database (idempotent)
+## load the bundled seed data into the database (idempotent)
 seed:
 	$(MANAGE) import_mock
 
 ## run the Django API (http://localhost:8000)
 run:
 	$(MANAGE) runserver 0.0.0.0:8000
-
-## run the json-server mock (http://localhost:3000)
-mock:
-	npm --prefix mock-api install
-	npm --prefix mock-api start
 
 ## run the Next.js + MUI admin (http://localhost:3001)
 admin:

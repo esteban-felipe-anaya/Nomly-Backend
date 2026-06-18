@@ -17,7 +17,7 @@ from rest_framework.views import APIView
 from apps.accounts.models import Address, User
 from apps.catalog.models import Banner, Cuisine, Dish, MenuCategory, Restaurant
 from apps.engagement.models import Notification
-from apps.orders.models import Order, Promo
+from apps.orders.models import Courier, Order, Promo
 
 from . import serializers as s
 
@@ -100,6 +100,14 @@ class PromoViewSet(_AdminViewSet):
     serializer_class = s.PromoSerializer
     id_prefix = "promo"
     search_fields = ["code"]
+
+
+class CourierViewSet(_AdminViewSet):
+    queryset = Courier.objects.all()
+    serializer_class = s.CourierSerializer
+    id_prefix = "cou"
+    search_fields = ["name", "phone", "vehicle"]
+    ordering_fields = ["name", "active"]
 
 
 class UserViewSet(_IdPrefixMixin, viewsets.ReadOnlyModelViewSet):

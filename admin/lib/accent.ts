@@ -17,6 +17,7 @@ export const accents = {
   amber: { main: "#F2A900" },
   indigo: { main: "#3F51B5" },
   cyan: { main: "#0097A7" },
+  red: { main: "#D32F2F" },
 } as const;
 
 export type AccentKey = keyof typeof accents;

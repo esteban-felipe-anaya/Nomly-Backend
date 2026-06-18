@@ -6,6 +6,7 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
+  Divider,
   Stack,
   TextField,
 } from "@mui/material";
@@ -13,6 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
+import AddressesSection from "@/components/AddressesSection";
 import ImageUploadField from "@/components/ImageUploadField";
 import { useSnackbar } from "@/components/providers/SnackbarProvider";
 import { apiErrorMessage, updateProfile } from "@/lib/api";
@@ -81,7 +83,7 @@ export default function ProfileDialog({
   };
 
   return (
-    <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
+    <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
       <DialogTitle>Edit profile</DialogTitle>
       <DialogContent>
         <Stack spacing={2} sx={{ mt: 1 }}>
@@ -114,6 +116,8 @@ export default function ProfileDialog({
             error={!!errors.password}
             helperText={errors.password?.message}
           />
+          <Divider sx={{ my: 1 }} />
+          <AddressesSection />
         </Stack>
       </DialogContent>
       <DialogActions>

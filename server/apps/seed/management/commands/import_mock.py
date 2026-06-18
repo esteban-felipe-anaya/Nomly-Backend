@@ -1,9 +1,9 @@
-"""Idempotent importer: mock-api/db.json -> PostgreSQL (or the configured DB).
+"""Idempotent importer: seed_data.json -> PostgreSQL (or the configured DB).
 
-Loads the same data the json-server mock serves, preserving real image URLs and
-stable string IDs/relationships. Safe to re-run (upserts by id).
+Loads the bundled seed data (real image URLs, stable string IDs/relationships)
+into the database. Safe to re-run (upserts by id).
 
-    python manage.py import_mock [--path ../mock-api/db.json] [--password password]
+    python manage.py import_mock [--path apps/seed/seed_data.json] [--password password]
 """
 
 import json
@@ -25,7 +25,7 @@ from apps.catalog.models import (
     Restaurant,
 )
 from apps.engagement.models import Favorites, Notification
-from apps.orders.models import Order, OrderItem, OrderTracking, Promo
+from apps.orders.models import Courier, Order, OrderItem, OrderTracking, Promo
 
 
 def _dt(value):
@@ -35,10 +35,10 @@ def _dt(value):
 
 
 class Command(BaseCommand):
-    help = "Import mock-api/db.json into the database (idempotent)."
+    help = "Import the bundled seed_data.json into the database (idempotent)."
 
     def add_arguments(self, parser):
-        parser.add_argument("--path", default=settings.MOCK_DB_PATH)
+        parser.add_argument("--path", default=settings.SEED_DATA_PATH)
         parser.add_argument(
             "--password", default="password", help="Password set on every seeded user."
         )
@@ -56,6 +56,7 @@ class Command(BaseCommand):
         self._users(db.get("users", []), opts["password"])
         self._addresses(db.get("addresses", []))
         self._favorites(db.get("favorites", []))
+        self._couriers(db.get("orders", []))
         self._orders(db.get("orders", []))
         self._notifications(db.get("notifications", []))
 
@@ -216,6 +217,30 @@ class Command(BaseCommand):
                 },
             )
 
+    # Seed couriers (idempotent) and build a name -> Courier lookup.
+    _COURIERS = [
+        {"id": "cou_01", "name": "Diego Hernández",
+         "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+         "phone": "+52 55 9876 5432", "vehicle": "Motorbike"},
+        {"id": "cou_02", "name": "Valeria Cruz",
+         "avatar": "https://randomuser.me/api/portraits/women/68.jpg",
+         "phone": "+52 55 2233 4455", "vehicle": "Bicycle"},
+        {"id": "cou_03", "name": "Mateo Flores",
+         "avatar": "https://randomuser.me/api/portraits/men/12.jpg",
+         "phone": "+52 55 7788 9900", "vehicle": "Car"},
+    ]
+
+    def _couriers(self, orders):
+        self._courier_by_name = {}
+        for c in self._COURIERS:
+            obj, _ = Courier.objects.update_or_create(
+                id=c["id"],
+                defaults={"name": c["name"], "avatar": c["avatar"],
+                          "phone": c["phone"], "vehicle": c["vehicle"], "active": True},
+            )
+            self._courier_by_name[c["name"]] = obj
+        self._default_courier = Courier.objects.filter(active=True).order_by("name").first()
+
     def _orders(self, rows):
         now = timezone.now()
         for o in rows:
@@ -267,9 +292,13 @@ class Command(BaseCommand):
                     line_total=it.get("lineTotal", 0),
                 )
             courier = o.get("courier") or {}
+            linked = self._courier_by_name.get(courier.get("name"))
+            if linked is None and not is_delivered:
+                linked = self._default_courier  # assign a courier to active orders
             OrderTracking.objects.update_or_create(
                 order=order,
                 defaults={
+                    "courier": linked,
                     "courier_name": courier.get("name", ""),
                     "courier_avatar": courier.get("avatar", ""),
                     "courier_phone": courier.get("phone", ""),

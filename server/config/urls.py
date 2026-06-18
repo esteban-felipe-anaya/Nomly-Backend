@@ -1,7 +1,7 @@
 """Root URL configuration.
 
-Routes mirror the json-server mock contract exactly (no `/api` prefix), so the
-Flutter app works by only switching its baseUrl.
+Routes match the API contract the Flutter app consumes (no `/api` prefix), so
+the app works by only pointing its baseUrl at this server.
 """
 
 from django.conf import settings

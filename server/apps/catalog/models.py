@@ -23,8 +23,8 @@ class Restaurant(models.Model):
     )
     cuisines = models.ManyToManyField(Cuisine, blank=True, related_name="restaurants_m2m")
     description = models.TextField(blank=True, default="")
-    cover = models.URLField(max_length=500, blank=True, default="")
-    logo = models.URLField(max_length=500, blank=True, default="")
+    cover = models.CharField(max_length=500, blank=True, default="")
+    logo = models.CharField(max_length=500, blank=True, default="")
     rating = models.DecimalField(max_digits=3, decimal_places=1, default=0)
     rating_count = models.PositiveIntegerField(default=0)
     delivery_minutes = models.PositiveIntegerField(default=30)
@@ -69,7 +69,7 @@ class Dish(models.Model):
     description = models.TextField(blank=True, default="")
     price = models.DecimalField(max_digits=8, decimal_places=2, default=0)
     currency = models.CharField(max_length=8, default="USD")
-    image = models.URLField(max_length=500, blank=True, default="")
+    image = models.CharField(max_length=500, blank=True, default="")
     popular = models.BooleanField(default=False)
 
     class Meta:
@@ -115,7 +115,7 @@ class Banner(models.Model):
     id = models.CharField(primary_key=True, max_length=64)
     title = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=255, blank=True, default="")
-    image = models.URLField(max_length=500, blank=True, default="")
+    image = models.CharField(max_length=500, blank=True, default="")
     restaurant = models.ForeignKey(
         Restaurant, on_delete=models.SET_NULL, null=True, blank=True, related_name="banners"
     )

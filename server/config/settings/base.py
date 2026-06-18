@@ -119,11 +119,11 @@ REST_FRAMEWORK = {
     # Public by default; user-scoped viewsets opt into IsAuthenticated.
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny",),
     # No global pagination — list endpoints return plain arrays to match the
-    # json-server mock contract the Flutter app already consumes.
+    # API contract the Flutter app consumes.
     "DEFAULT_PAGINATION_CLASS": None,
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
     "UNAUTHENTICATED_USER": None,
-    # Emit money as JSON numbers (not strings) to match the json-server mock.
+    # Emit money as JSON numbers (not strings) to match the app's expectations.
     "COERCE_DECIMAL_TO_STRING": False,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
@@ -132,7 +132,7 @@ REST_FRAMEWORK = {
 SPECTACULAR_SETTINGS = {
     "TITLE": "Nomly API",
     "DESCRIPTION": "Backend for the Nomly food-delivery app. The public endpoints "
-    "mirror the json-server mock contract; `/admin-api/*` is the staff-only "
+    "are the API the Flutter app consumes; `/admin-api/*` is the staff-only "
     "dashboard API.",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
@@ -150,5 +150,8 @@ SIMPLE_JWT = {
 CORS_ALLOW_ALL_ORIGINS = env("CORS_ALLOW_ALL_ORIGINS")
 CORS_ALLOWED_ORIGINS = env("CORS_ALLOWED_ORIGINS")
 
-# Path to the json-server seed file (single source of seed truth).
-MOCK_DB_PATH = env("MOCK_DB_PATH", default=str(BASE_DIR.parent / "mock-api" / "db.json"))
+# Path to the JSON seed file loaded by `manage.py import_mock`.
+SEED_DATA_PATH = env(
+    "SEED_DATA_PATH",
+    default=str(BASE_DIR / "apps" / "seed" / "seed_data.json"),
+)

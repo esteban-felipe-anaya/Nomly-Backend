@@ -13,6 +13,7 @@ import CategoryIcon from "@mui/icons-material/Category";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import ViewCarouselIcon from "@mui/icons-material/ViewCarousel";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import TwoWheelerIcon from "@mui/icons-material/TwoWheeler";
 import PeopleIcon from "@mui/icons-material/People";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import {
@@ -65,6 +66,7 @@ const NAV: NavItem[] = [
   { label: "Orders", href: "/orders", icon: <ReceiptLongIcon />, accent: accents.purple },
   { label: "Banners", href: "/banners", icon: <ViewCarouselIcon />, accent: accents.teal },
   { label: "Promos", href: "/promos", icon: <LocalOfferIcon />, accent: accents.pink },
+  { label: "Couriers", href: "/couriers", icon: <TwoWheelerIcon />, accent: accents.red },
   { label: "Users", href: "/users", icon: <PeopleIcon />, accent: accents.indigo },
   {
     label: "Notifications",
