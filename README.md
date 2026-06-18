@@ -32,6 +32,36 @@ preserved) into the database so a fresh DB comes up fully populated.
 
 ---
 
+## 🖥️ Admin dashboard
+
+The Next.js + MUI admin (`admin/`), themed in Nomly orange with a collapsible sidebar, colorful
+icons and light/dark mode:
+
+<p align="center">
+  <img src="screenshots/dashboard.png" width="900" alt="Dashboard — KPIs, orders-over-time, revenue by cuisine, top restaurants, order-status donut"/>
+</p>
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="screenshots/restaurants.png" alt="Restaurants"/></td>
+    <td align="center" width="50%"><img src="screenshots/restaurant-menu.png" alt="Restaurant menu management"/></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Restaurants</b> — DataGrid with ratings, colored free-delivery icons & row actions</sub></td>
+    <td align="center"><sub><b>Menu management</b> — categories + dishes (with customization)</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/orders.png" alt="Orders"/></td>
+    <td align="center"><img src="screenshots/couriers.png" alt="Couriers"/></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Orders</b> — colored status chips, filters & status updates</sub></td>
+    <td align="center"><sub><b>Couriers</b> — DB-backed courier CRUD</sub></td>
+  </tr>
+</table>
+
+---
+
 ## Use as a git submodule
 
 This backend lives in its own repository and is mounted into the Flutter project at `backend/`:
