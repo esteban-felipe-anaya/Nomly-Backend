@@ -41,6 +41,7 @@ import { useEffect, useState } from "react";
 import MotionContent from "@/components/MotionContent";
 import ProfileDialog from "@/components/ProfileDialog";
 import { useColorMode } from "@/components/providers/ColorModeProvider";
+import { mediaUrl } from "@/lib/api";
 import { accents, tintBg, type Accent } from "@/lib/accent";
 import { clearSession, getUser } from "@/lib/auth";
 import type { AuthUser } from "@/lib/types";
@@ -233,7 +234,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
               aria-label="account menu"
             >
               {user?.avatar ? (
-                <Avatar src={user.avatar} sx={{ width: 32, height: 32 }} />
+                <Avatar src={mediaUrl(user.avatar)} sx={{ width: 32, height: 32 }} />
               ) : (
                 <Avatar
                   sx={{

@@ -13,6 +13,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import {
   DataGrid,
   GridActionsCellItem,
@@ -25,13 +26,16 @@ import { useEffect, useMemo, useState } from "react";
 import { useList, type ListParams } from "@/lib/useCrud";
 
 // Colored icons for boolean cells (free delivery, active, is_staff, …):
-// green check for true, red close for false.
-const BoolTrueIcon = (props: SvgIconProps) => (
-  <CheckIcon {...props} color="success" />
-);
-const BoolFalseIcon = (props: SvgIconProps) => (
-  <CloseIcon {...props} color="error" />
-);
+// green check for true, red close for false. Uses an inline style because the
+// DataGrid's `.MuiDataGrid-booleanCell` rule overrides the SvgIcon color class.
+const BoolTrueIcon = (props: SvgIconProps) => {
+  const theme = useTheme();
+  return <CheckIcon {...props} style={{ color: theme.palette.success.main }} />;
+};
+const BoolFalseIcon = (props: SvgIconProps) => {
+  const theme = useTheme();
+  return <CloseIcon {...props} style={{ color: theme.palette.error.main }} />;
+};
 
 export interface CrudDataGridProps<T extends { id: string | number }> {
   title: string;
@@ -181,6 +185,8 @@ export default function CrudDataGrid<T extends { id: string | number }>({
           bgcolor: "background.paper",
           borderRadius: 2,
           "& .MuiDataGrid-row": { cursor: onRowClick ? "pointer" : "default" },
+          // Vertically center cell content (esp. image avatars in renderCell).
+          "& .MuiDataGrid-cell": { display: "flex", alignItems: "center" },
           minHeight: 400,
         }}
       />

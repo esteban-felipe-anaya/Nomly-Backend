@@ -2,6 +2,7 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from .views import (
+    AddressViewSet,
     BannerViewSet,
     CuisineViewSet,
     DishViewSet,
@@ -23,6 +24,7 @@ router.register("dishes", DishViewSet, basename="admin-dish")
 router.register("banners", BannerViewSet, basename="admin-banner")
 router.register("promos", PromoViewSet, basename="admin-promo")
 router.register("users", UserViewSet, basename="admin-user")
+router.register("addresses", AddressViewSet, basename="admin-address")
 router.register("orders", OrderViewSet, basename="admin-order")
 router.register("notifications", NotificationViewSet, basename="admin-notification")
 

@@ -6,7 +6,7 @@ frozen while the admin gets rich CRUD.
 from drf_spectacular.utils import extend_schema_serializer
 from rest_framework import serializers
 
-from apps.accounts.models import User
+from apps.accounts.models import Address, User
 from apps.catalog.models import (
     Banner,
     Cuisine,
@@ -136,6 +136,14 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ["id", "name", "email", "phone", "avatar", "is_staff",
                   "is_active", "date_joined"]
+
+
+@extend_schema_serializer(component_name="AdminAddress")
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Address
+        fields = ["id", "user", "label", "line1", "line2", "city", "notes",
+                  "lat", "lng", "is_default"]
 
 
 @extend_schema_serializer(component_name="AdminOrderItem")

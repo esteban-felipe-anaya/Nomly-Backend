@@ -12,13 +12,35 @@ import {
   Typography,
 } from "@mui/material";
 import type { GridColDef } from "@mui/x-data-grid";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import CrudDataGrid from "@/components/CrudDataGrid";
-import { mediaUrl } from "@/lib/api";
-import type { AdminUser } from "@/lib/types";
+import { api, mediaUrl } from "@/lib/api";
+import type { AdminUser, Paginated } from "@/lib/types";
+
+interface UserAddress {
+  id: string;
+  label: string;
+  line1: string;
+  line2?: string;
+  city?: string;
+  notes?: string;
+  is_default: boolean;
+}
 
 export default function UsersPage() {
   const [selected, setSelected] = useState<AdminUser | null>(null);
+
+  const { data: addresses } = useQuery({
+    queryKey: ["addresses", selected?.id],
+    enabled: !!selected,
+    queryFn: async () => {
+      const { data } = await api.get<Paginated<UserAddress>>(
+        `/admin-api/addresses?user=${selected!.id}`,
+      );
+      return data.results;
+    },
+  });
 
   const columns: GridColDef<AdminUser>[] = [
     {
@@ -127,6 +149,40 @@ export default function UsersPage() {
                   <Typography>{val}</Typography>
                 </Box>
               ))}
+            </Stack>
+
+            <Divider sx={{ my: 2 }} />
+            <Typography variant="subtitle2" sx={{ mb: 1 }}>
+              Addresses {addresses ? `(${addresses.length})` : ""}
+            </Typography>
+            <Stack spacing={1}>
+              {addresses && addresses.length > 0 ? (
+                addresses.map((a) => (
+                  <Box
+                    key={a.id}
+                    sx={{ p: 1.5, borderRadius: 2, bgcolor: "action.hover" }}
+                  >
+                    <Stack direction="row" spacing={1} alignItems="center">
+                      <Typography variant="subtitle2">{a.label}</Typography>
+                      {a.is_default && (
+                        <Chip size="small" color="primary" label="Default" />
+                      )}
+                    </Stack>
+                    <Typography variant="body2" color="text.secondary">
+                      {[a.line1, a.line2, a.city].filter(Boolean).join(", ")}
+                    </Typography>
+                    {a.notes && (
+                      <Typography variant="caption" color="text.secondary">
+                        {a.notes}
+                      </Typography>
+                    )}
+                  </Box>
+                ))
+              ) : (
+                <Typography variant="body2" color="text.secondary">
+                  No saved addresses.
+                </Typography>
+              )}
             </Stack>
           </Box>
         )}

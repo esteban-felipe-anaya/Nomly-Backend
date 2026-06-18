@@ -14,7 +14,7 @@ from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.accounts.models import User
+from apps.accounts.models import Address, User
 from apps.catalog.models import Banner, Cuisine, Dish, MenuCategory, Restaurant
 from apps.engagement.models import Notification
 from apps.orders.models import Order, Promo
@@ -109,6 +109,21 @@ class UserViewSet(_IdPrefixMixin, viewsets.ReadOnlyModelViewSet):
     pagination_class = AdminPagination
     filter_backends = [filters.SearchFilter]
     search_fields = ["name", "email"]
+
+
+class AddressViewSet(viewsets.ReadOnlyModelViewSet):
+    """Read-only view of every user's addresses (filter with ?user=<id>)."""
+
+    serializer_class = s.AddressSerializer
+    permission_classes = [IsAdminUser]
+    pagination_class = AdminPagination
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["label", "line1", "city", "user__email"]
+
+    def get_queryset(self):
+        qs = Address.objects.select_related("user").all()
+        user = self.request.query_params.get("user")
+        return qs.filter(user_id=user) if user else qs
 
 
 class OrderViewSet(viewsets.ReadOnlyModelViewSet):
