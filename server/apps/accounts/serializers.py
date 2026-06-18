@@ -37,6 +37,15 @@ class AddressSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
 
 
+class ProfileUpdateSerializer(serializers.Serializer):
+    """Partial update of the logged-in user's own profile."""
+
+    name = serializers.CharField(required=False)
+    phone = serializers.CharField(required=False, allow_blank=True)
+    avatar = serializers.CharField(required=False, allow_blank=True)
+    password = serializers.CharField(required=False, write_only=True, min_length=4)
+
+
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True)

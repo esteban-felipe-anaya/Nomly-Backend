@@ -2,6 +2,7 @@
 
 import BrokenImageIcon from "@mui/icons-material/BrokenImage";
 import { Box } from "@mui/material";
+import { mediaUrl } from "@/lib/api";
 
 interface ImagePreviewProps {
   url?: string | null;
@@ -14,6 +15,7 @@ export default function ImagePreview({
   height = 140,
   alt = "preview",
 }: ImagePreviewProps) {
+  const resolved = mediaUrl(url);
   return (
     <Box
       sx={{
@@ -28,10 +30,10 @@ export default function ImagePreview({
         overflow: "hidden",
       }}
     >
-      {url ? (
+      {resolved ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={url}
+          src={resolved}
           alt={alt}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />

@@ -3,6 +3,7 @@
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import LogoutIcon from "@mui/icons-material/Logout";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -25,6 +26,8 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Menu,
+  MenuItem,
   Toolbar,
   Tooltip,
   Typography,
@@ -36,9 +39,11 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import MotionContent from "@/components/MotionContent";
+import ProfileDialog from "@/components/ProfileDialog";
 import { useColorMode } from "@/components/providers/ColorModeProvider";
 import { accents, tintBg, type Accent } from "@/lib/accent";
 import { clearSession, getUser } from "@/lib/auth";
+import type { AuthUser } from "@/lib/types";
 
 const DRAWER_WIDTH = 248;
 const DRAWER_WIDTH_COLLAPSED = 76;
@@ -77,9 +82,12 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
-  const user = typeof window !== "undefined" ? getUser() : null;
+  const [user, setUserState] = useState<AuthUser | null>(null);
+  const [menuAnchor, setMenuAnchor] = useState<null | HTMLElement>(null);
+  const [profileOpen, setProfileOpen] = useState(false);
 
   useEffect(() => {
+    setUserState(getUser());
     const stored = window.localStorage.getItem(COLLAPSE_KEY);
     if (stored === "1") setCollapsed(true);
   }, []);
@@ -218,26 +226,68 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
               {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
             </IconButton>
           </Tooltip>
-          {user?.avatar ? (
-            <Avatar src={user.avatar} sx={{ width: 32, height: 32, mx: 1 }} />
-          ) : (
-            <Avatar
-              sx={{
-                width: 32,
-                height: 32,
-                mx: 1,
-                bgcolor: tintBg(accents.orange.main, "33"),
-                color: "primary.main",
-              }}
+          <Tooltip title="Account">
+            <IconButton
+              onClick={(e) => setMenuAnchor(e.currentTarget)}
+              sx={{ ml: 1 }}
+              aria-label="account menu"
             >
-              {user?.name?.[0]?.toUpperCase() ?? "A"}
-            </Avatar>
-          )}
-          <Tooltip title="Logout">
-            <IconButton onClick={handleLogout} color="inherit">
-              <LogoutIcon />
+              {user?.avatar ? (
+                <Avatar src={user.avatar} sx={{ width: 32, height: 32 }} />
+              ) : (
+                <Avatar
+                  sx={{
+                    width: 32,
+                    height: 32,
+                    bgcolor: tintBg(accents.orange.main, "33"),
+                    color: "primary.main",
+                  }}
+                >
+                  {user?.name?.[0]?.toUpperCase() ?? "A"}
+                </Avatar>
+              )}
             </IconButton>
           </Tooltip>
+          <Menu
+            anchorEl={menuAnchor}
+            open={!!menuAnchor}
+            onClose={() => setMenuAnchor(null)}
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            transformOrigin={{ vertical: "top", horizontal: "right" }}
+            slotProps={{ paper: { sx: { minWidth: 220, mt: 0.5 } } }}
+          >
+            <Box sx={{ px: 2, py: 1 }}>
+              <Typography variant="subtitle2" noWrap>
+                {user?.name ?? "Account"}
+              </Typography>
+              <Typography variant="caption" color="text.secondary" noWrap>
+                {user?.email ?? ""}
+              </Typography>
+            </Box>
+            <Divider />
+            <MenuItem
+              onClick={() => {
+                setMenuAnchor(null);
+                setProfileOpen(true);
+              }}
+            >
+              <ListItemIcon>
+                <ManageAccountsIcon fontSize="small" color="primary" />
+              </ListItemIcon>
+              Edit profile
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                setMenuAnchor(null);
+                handleLogout();
+              }}
+            >
+              <ListItemIcon>
+                <LogoutIcon fontSize="small" color="error" />
+              </ListItemIcon>
+              Logout
+            </MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
 
@@ -302,6 +352,15 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           <MotionContent>{children}</MotionContent>
         </Box>
       </Box>
+
+      {user && (
+        <ProfileDialog
+          open={profileOpen}
+          user={user}
+          onClose={() => setProfileOpen(false)}
+          onSaved={(u) => setUserState(u)}
+        />
+      )}
     </Box>
   );
 }

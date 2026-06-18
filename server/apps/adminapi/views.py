@@ -176,9 +176,10 @@ _ALLOWED_IMAGE_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}
     responses=inline_serializer(name="UploadResponse", fields={"url": serializers.CharField()}),
 )
 class UploadView(APIView):
-    """Accepts a multipart image upload and returns a servable URL. The admin
-    stores that URL in the existing image fields (cover/logo/image), so the
-    API contract (URL strings) is unchanged."""
+    """Accepts a multipart image upload and returns the stored **relative**
+    media path (e.g. `/media/uploads/<id>.png`). Clients prepend their own base
+    URL when displaying it, so the value is host-independent. The image fields
+    stay plain strings, so the API contract is unchanged."""
 
     permission_classes = [IsAdminUser]
     parser_classes = [MultiPartParser, FormParser]
@@ -192,8 +193,8 @@ class UploadView(APIView):
             return Response({"detail": f"Unsupported file type '{ext}'."}, status=400)
         name = f"uploads/{uuid.uuid4().hex}{ext}"
         saved = default_storage.save(name, upload)
-        url = request.build_absolute_uri(default_storage.url(saved))
-        return Response({"url": url}, status=status.HTTP_201_CREATED)
+        # Relative path only (MEDIA_URL-prefixed); never the absolute host.
+        return Response({"url": default_storage.url(saved)}, status=status.HTTP_201_CREATED)
 
 
 class StatsView(APIView):

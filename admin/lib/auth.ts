@@ -23,6 +23,11 @@ export function clearSession(): void {
   window.localStorage.removeItem(USER_KEY);
 }
 
+export function setUser(user: AuthUser): void {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(USER_KEY, JSON.stringify(user));
+}
+
 export function getUser(): AuthUser | null {
   if (typeof window === "undefined") return null;
   const raw = window.localStorage.getItem(USER_KEY);

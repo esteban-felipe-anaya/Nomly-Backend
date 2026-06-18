@@ -4,6 +4,18 @@ import { clearSession, getToken } from "./auth";
 export const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
 
+/**
+ * Resolves a stored image value for display. Absolute URLs (e.g. Unsplash) pass
+ * through; server-relative media paths ("/media/...") are prefixed with the API
+ * base URL. Anything else (or empty) is returned as-is.
+ */
+export function mediaUrl(path?: string | null): string {
+  if (!path) return "";
+  if (/^https?:\/\//i.test(path)) return path;
+  if (path.startsWith("/")) return `${API_BASE_URL}${path}`;
+  return path;
+}
+
 export const api = axios.create({
   baseURL: API_BASE_URL,
   headers: { "Content-Type": "application/json" },
@@ -51,6 +63,20 @@ export async function uploadImage(
     },
   });
   return data.url;
+}
+
+/** Updates the logged-in user's own profile (PATCH /auth/me) and returns the user. */
+export async function updateProfile(payload: {
+  name?: string;
+  phone?: string;
+  avatar?: string;
+  password?: string;
+}): Promise<import("./types").AuthUser> {
+  const { data } = await api.patch<{ user: import("./types").AuthUser }>(
+    "/auth/me",
+    payload,
+  );
+  return data.user;
 }
 
 export function apiErrorMessage(error: unknown, fallback = "Something went wrong"): string {

@@ -10,6 +10,7 @@ from .models import Address, User
 from .serializers import (
     AddressSerializer,
     LoginSerializer,
+    ProfileUpdateSerializer,
     RegisterSerializer,
     UserSerializer,
 )
@@ -74,12 +75,26 @@ class RegisterView(APIView):
         )
 
 
-@extend_schema(responses=_me_response)
 class MeView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(responses=_me_response)
     def get(self, request):
         return Response({"user": UserSerializer(request.user).data})
+
+    @extend_schema(request=ProfileUpdateSerializer, responses=_me_response)
+    def patch(self, request):
+        serializer = ProfileUpdateSerializer(data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        data = serializer.validated_data
+        user = request.user
+        for field in ("name", "phone", "avatar"):
+            if field in data:
+                setattr(user, field, data[field])
+        if data.get("password"):
+            user.set_password(data["password"])
+        user.save()
+        return Response({"user": UserSerializer(user).data})
 
 
 class AddressViewSet(viewsets.ModelViewSet):

@@ -11,7 +11,6 @@ import {
   Box,
   Card,
   CardContent,
-  Chip,
   Grid2 as Grid,
   LinearProgress,
   Skeleton,
@@ -27,6 +26,7 @@ import CountUp from "@/components/CountUp";
 import { api } from "@/lib/api";
 import { accents, tintBg } from "@/lib/accent";
 import { fadeSlideUp, scaleIn, staggerContainer } from "@/lib/motion";
+import { StatusChip } from "@/lib/orderStatus";
 import { queryKeys } from "@/lib/queryKeys";
 import type { Order, OrderStatus, Paginated, Stats } from "@/lib/types";
 
@@ -45,18 +45,6 @@ const STATUS_COLOR: Record<OrderStatus, string> = {
   on_the_way: accents.orange.main,
   delivered: accents.green.main,
   cancelled: accents.pink.main,
-};
-
-const STATUS_CHIP: Record<
-  OrderStatus,
-  "default" | "info" | "warning" | "secondary" | "primary" | "success" | "error"
-> = {
-  confirmed: "info",
-  preparing: "warning",
-  picked_up: "secondary",
-  on_the_way: "primary",
-  delivered: "success",
-  cancelled: "error",
 };
 
 function statusLabel(s: string): string {
@@ -457,12 +445,9 @@ export default function DashboardPage() {
                         <Typography variant="body2" sx={{ width: 90, textAlign: "right" }}>
                           {formatCurrency(o.total)}
                         </Typography>
-                        <Chip
-                          size="small"
-                          label={statusLabel(o.status)}
-                          color={STATUS_CHIP[o.status] ?? "default"}
-                          sx={{ textTransform: "capitalize", width: 110 }}
-                        />
+                        <Box sx={{ width: 130, display: "flex", justifyContent: "flex-end" }}>
+                          <StatusChip status={o.status} />
+                        </Box>
                       </Stack>
                     ))}
                   </Stack>

@@ -34,7 +34,7 @@ import { useState } from "react";
 import ConfirmDialog from "@/components/ConfirmDialog";
 import DishFormDialog from "@/components/DishFormDialog";
 import { useSnackbar } from "@/components/providers/SnackbarProvider";
-import { api, apiErrorMessage } from "@/lib/api";
+import { api, apiErrorMessage, mediaUrl } from "@/lib/api";
 import type { Dish, MenuCategory, Paginated, Restaurant } from "@/lib/types";
 import { useCreate, useRemove, useUpdate } from "@/lib/useCrud";
 
@@ -168,7 +168,7 @@ export default function RestaurantMenuPage() {
         </IconButton>
         {restaurant ? (
           <>
-            <Avatar src={restaurant.logo || restaurant.cover || undefined}>
+            <Avatar src={mediaUrl(restaurant.logo || restaurant.cover) || undefined}>
               {restaurant.name[0]}
             </Avatar>
             <Box>
@@ -292,7 +292,7 @@ export default function RestaurantMenuPage() {
                     }
                   >
                     <ListItemAvatar>
-                      <Avatar variant="rounded" src={d.image || undefined}>
+                      <Avatar variant="rounded" src={mediaUrl(d.image) || undefined}>
                         {d.name[0]}
                       </Avatar>
                     </ListItemAvatar>

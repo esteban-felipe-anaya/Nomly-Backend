@@ -25,7 +25,7 @@ import ConfirmDialog from "@/components/ConfirmDialog";
 import CrudDataGrid from "@/components/CrudDataGrid";
 import ImageUploadField from "@/components/ImageUploadField";
 import { useSnackbar } from "@/components/providers/SnackbarProvider";
-import { apiErrorMessage } from "@/lib/api";
+import { apiErrorMessage, mediaUrl } from "@/lib/api";
 import type { Restaurant } from "@/lib/types";
 import { useCreate, useRemove, useUpdate } from "@/lib/useCrud";
 import { useAllCuisines } from "@/lib/useCuisines";
@@ -159,7 +159,7 @@ export default function RestaurantsPage() {
       width: 60,
       sortable: false,
       renderCell: (p) => (
-        <Avatar src={p.value || p.row.cover || undefined}>
+        <Avatar src={mediaUrl(p.value || p.row.cover) || undefined}>
           {p.row.name?.[0]}
         </Avatar>
       ),

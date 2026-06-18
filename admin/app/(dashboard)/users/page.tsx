@@ -14,6 +14,7 @@ import {
 import type { GridColDef } from "@mui/x-data-grid";
 import { useState } from "react";
 import CrudDataGrid from "@/components/CrudDataGrid";
+import { mediaUrl } from "@/lib/api";
 import type { AdminUser } from "@/lib/types";
 
 export default function UsersPage() {
@@ -26,7 +27,7 @@ export default function UsersPage() {
       width: 60,
       sortable: false,
       renderCell: (p) => (
-        <Avatar src={p.value || undefined} sx={{ width: 32, height: 32 }}>
+        <Avatar src={mediaUrl(p.value) || undefined} sx={{ width: 32, height: 32 }}>
           {p.row.name?.[0]}
         </Avatar>
       ),
@@ -89,7 +90,7 @@ export default function UsersPage() {
             </Stack>
             <Stack alignItems="center" spacing={1} sx={{ mb: 2 }}>
               <Avatar
-                src={selected.avatar || undefined}
+                src={mediaUrl(selected.avatar) || undefined}
                 sx={{ width: 72, height: 72 }}
               >
                 {selected.name?.[0]}

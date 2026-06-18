@@ -2,7 +2,6 @@
 
 import {
   Box,
-  Chip,
   Divider,
   Drawer,
   IconButton,
@@ -21,38 +20,18 @@ import { useState } from "react";
 import CrudDataGrid from "@/components/CrudDataGrid";
 import { useSnackbar } from "@/components/providers/SnackbarProvider";
 import { api, apiErrorMessage } from "@/lib/api";
+import {
+  ORDER_STATUSES,
+  StatusChip,
+  statusLabel,
+} from "@/lib/orderStatus";
 import type { Order, OrderStatus, Paginated } from "@/lib/types";
-
-const STATUSES: OrderStatus[] = [
-  "confirmed",
-  "preparing",
-  "picked_up",
-  "on_the_way",
-  "delivered",
-  "cancelled",
-];
-
-const STATUS_COLOR: Record<
-  OrderStatus,
-  "default" | "info" | "warning" | "secondary" | "primary" | "success" | "error"
-> = {
-  confirmed: "info",
-  preparing: "warning",
-  picked_up: "secondary",
-  on_the_way: "primary",
-  delivered: "success",
-  cancelled: "error",
-};
 
 function money(n: number | undefined | null): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(n ?? 0);
-}
-
-function statusLabel(s: string): string {
-  return s.replace(/_/g, " ");
 }
 
 export default function OrdersPage() {
@@ -124,15 +103,8 @@ export default function OrdersPage() {
     {
       field: "status",
       headerName: "Status",
-      width: 140,
-      renderCell: (p) => (
-        <Chip
-          size="small"
-          label={statusLabel(p.value)}
-          color={STATUS_COLOR[p.value as OrderStatus] ?? "default"}
-          sx={{ textTransform: "capitalize" }}
-        />
-      ),
+      width: 150,
+      renderCell: (p) => <StatusChip status={p.value} />,
     },
     {
       field: "total",
@@ -171,7 +143,7 @@ export default function OrdersPage() {
             sx={{ width: 170 }}
           >
             <MenuItem value="">All</MenuItem>
-            {STATUSES.map((s) => (
+            {ORDER_STATUSES.map((s) => (
               <MenuItem key={s} value={s} sx={{ textTransform: "capitalize" }}>
                 {statusLabel(s)}
               </MenuItem>
@@ -213,7 +185,7 @@ export default function OrdersPage() {
               disabled={setStatus.isPending}
               sx={{ my: 2 }}
             >
-              {STATUSES.map((s) => (
+              {ORDER_STATUSES.map((s) => (
                 <MenuItem key={s} value={s} sx={{ textTransform: "capitalize" }}>
                   {statusLabel(s)}
                 </MenuItem>

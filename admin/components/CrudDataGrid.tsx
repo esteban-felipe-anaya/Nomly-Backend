@@ -1,12 +1,15 @@
 "use client";
 
 import AddIcon from "@mui/icons-material/Add";
+import CheckIcon from "@mui/icons-material/Check";
+import CloseIcon from "@mui/icons-material/Close";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import {
   Box,
   Button,
   Stack,
+  type SvgIconProps,
   TextField,
   Typography,
 } from "@mui/material";
@@ -20,6 +23,15 @@ import {
 } from "@mui/x-data-grid";
 import { useEffect, useMemo, useState } from "react";
 import { useList, type ListParams } from "@/lib/useCrud";
+
+// Colored icons for boolean cells (free delivery, active, is_staff, …):
+// green check for true, red close for false.
+const BoolTrueIcon = (props: SvgIconProps) => (
+  <CheckIcon {...props} color="success" />
+);
+const BoolFalseIcon = (props: SvgIconProps) => (
+  <CloseIcon {...props} color="error" />
+);
 
 export interface CrudDataGridProps<T extends { id: string | number }> {
   title: string;
@@ -159,6 +171,10 @@ export default function CrudDataGrid<T extends { id: string | number }>({
         sortModel={sortModel}
         onSortModelChange={setSortModel}
         pageSizeOptions={[10, 25, 50]}
+        slots={{
+          booleanCellTrueIcon: BoolTrueIcon,
+          booleanCellFalseIcon: BoolFalseIcon,
+        }}
         disableRowSelectionOnClick
         onRowClick={onRowClick ? (p) => onRowClick(p.row) : undefined}
         sx={{
